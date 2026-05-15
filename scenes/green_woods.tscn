@@ -1,0 +1,1207 @@
+[gd_scene load_steps=8 format=3 uid="uid://cp4qcby3vfcvy"]
+
+[ext_resource type="Texture2D" uid="uid://crhfiwncsdvkl" path="res://assets/images/items/green_wood_tree.png" id="1_mik3e"]
+
+[sub_resource type="Environment" id="Environment_r4ki7"]
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bidbc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qwd5g"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8b43r"]
+albedo_color = Color(0, 0.568627, 0.345098, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uy0hc"]
+material = SubResource("StandardMaterial3D_8b43r")
+size = Vector3(100, 1, 100)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jpi7s"]
+height = 5.0
+radius = 2.0
+
+[node name="GreenWoods" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_r4ki7")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+physics_material_override = SubResource("PhysicsMaterial_bidbc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_qwd5g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("BoxMesh_uy0hc")
+
+[node name="Obstacles" type="Node3D" parent="."]
+
+[node name="Trees" type="Node3D" parent="Obstacles"]
+
+[node name="Tree01" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2.5, 45)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree01"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree01"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree02" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.5, 45)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree02"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree02"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree03" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 2.5, 44)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree03"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree03"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree04" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 2.5, 43)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree04"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree04"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree05" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 2.5, 42)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree05"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree05"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree06" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 2.5, 43)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree06"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree06"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree07" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 2.5, 42)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree07"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree07"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree08" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.5, 2.5, 41)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree08"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree08"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree09" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 2.5, 40)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree09"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree09"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree10" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 2.5, 37)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree10"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree10"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree11" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 2.5, 34)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree11"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree11"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree12" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 2.5, 31)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree12"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree12"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree13" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.5, 2.5, 27.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree13"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree13"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree14" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 2.5, 24)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree14"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree14"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree15" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.5, 2.5, 21)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree15"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree15"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree16" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 2.5, 18.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree16"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree16"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree17" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 2.5, 15.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree17"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree17"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree18" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 2.5, 12)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree18"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree18"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree19" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.5, 2.5, 9)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree19"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree19"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree20" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 2.5, 6)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree20"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree20"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree21" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 2.5, 2.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree21"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree21"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree22" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.5, 2.5, 0)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree22"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree22"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree23" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 2.5, -3)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree23"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree23"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree24" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.5, 2.5, -5.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree24"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree24"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree25" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.25, 2.5, -8.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree25"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree25"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree26" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 2.5, -11)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree26"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree26"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree27" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.5, 2.5, -14)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree27"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree27"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree28" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 2.5, -16.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree28"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree28"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree29" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.5, 2.5, -19)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree29"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree29"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree30" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.25, 2.5, -22)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree30"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree30"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree31" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.75, 2.5, -24.75)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree31"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree31"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree32" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 2.5, -27.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree32"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree32"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree33" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5, 2.5, -30)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree33"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree33"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree34" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 2.5, -32.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree34"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree34"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree35" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 2.5, -36)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree35"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree35"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree36" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 2.5, -38)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree36"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree36"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree37" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 2.5, -41)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree37"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree37"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree38" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 2.5, -44)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree38"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree38"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree39" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 2.5, -45)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree39"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree39"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree40" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 2.5, -44)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree40"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree40"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree41" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 2.5, -44.55)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree41"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree41"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree42" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.75, 2.5, -44)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree42"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree42"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree43" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.25, 2.5, -44.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree43"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree43"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree44" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 2.5, -44)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree44"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree44"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree45" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 2.5, -43)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree45"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree45"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree46" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 2.5, -43.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree46"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree46"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree47" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 2.5, -43.25)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree47"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree47"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree48" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.5, -43)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree48"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree48"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree49" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.5, -42.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree49"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree49"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree50" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 2.5, -43)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree50"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree50"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree51" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 2.5, -42.75)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree51"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree51"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree52" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 2.5, -42.75)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree52"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree52"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree53" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.5, -42.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree53"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree53"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree54" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2.5, -42.25)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree54"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree54"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree55" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2.5, -41.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree55"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree55"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree56" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 2.5, -41.25)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree56"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree56"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree57" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 2.5, -40.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree57"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree57"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree58" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 2.5, -39.75)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree58"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree58"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree59" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 2.5, -39)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree59"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree59"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree60" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.25, 2.5, -38.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree60"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree60"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree61" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 2.5, -37.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree61"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree61"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree62" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 2.5, -37)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree62"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree62"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree63" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 2.5, -36)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree63"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree63"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree64" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 2.5, -35)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree64"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree64"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree65" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 2.5, -34)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree65"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree65"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree66" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 2.5, -33.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree66"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree66"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree67" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 2.5, -32)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree67"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree67"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree68" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 2.5, -30)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree68"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree68"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree69" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 2.5, -28)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree69"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree69"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree70" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 2.5, -26)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree70"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree70"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree71" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 2.5, -24)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree71"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree71"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree72" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 2.5, -21)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree72"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree72"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree73" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 2.5, -18)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree73"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree73"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree74" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 2.5, -16)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree74"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree74"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree75" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 2.5, -14)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree75"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree75"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree76" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 2.5, -12)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree76"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree76"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree77" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 2.5, -9)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree77"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree77"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree78" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 2.5, -6)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree78"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree78"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree79" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.5, 2.5, -4)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree79"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree79"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree80" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 2.5, -1)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree80"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree80"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree81" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.5, 2.5, 2)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree81"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree81"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree82" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 2.5, 5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree82"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree82"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree83" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 2.5, 7)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree83"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree83"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree84" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 2.5, 9)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree84"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree84"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree85" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.5, 2.5, 12)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree85"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree85"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree86" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.5, 2.5, 14)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree86"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree86"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree87" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 2.5, 16.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree87"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree87"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree88" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.75, 2.5, 18.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree88"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree88"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree89" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 2.5, 21)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree89"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree89"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree90" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5, 2.5, 24)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree90"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree90"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree91" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.75, 2.5, 26)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree91"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree91"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree92" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 2.5, 28)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree92"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree92"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree93" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.75, 2.5, 31)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree93"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree93"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree94" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 2.5, 34)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree94"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree94"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree95" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5, 2.5, 36.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree95"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree95"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree96" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.5, 39)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree96"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree96"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree97" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.75, 2.5, 41)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree97"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree97"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree98" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 2.5, 42.25)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree98"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree98"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree99" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 2.5, 43)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree99"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree99"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree100" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 2.5, 43.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree100"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree100"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree101" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.25, 2.5, 44)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree101"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree101"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree102" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5, 2.5, 43.75)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree102"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree102"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree103" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.75, 2.5, 44.25)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree103"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree103"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree104" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 2.5, 44.5)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree104"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree104"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree105" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, 2.5, 44)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree105"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree105"]
+shape = SubResource("CylinderShape3D_jpi7s")
+
+[node name="Tree106" type="StaticBody3D" parent="Obstacles/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 2.5, 43)
+
+[node name="Sprite" type="Sprite3D" parent="Obstacles/Trees/Tree106"]
+billboard = 1
+shaded = true
+texture = ExtResource("1_mik3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trees/Tree106"]
+shape = SubResource("CylinderShape3D_jpi7s")
