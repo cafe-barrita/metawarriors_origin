@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://dxcwqbjmh53n4"]
+
+[ext_resource type="Script" uid="uid://dj48q75r1pon4" path="res://scripts/atb.gd" id="1_vjb58"]
+[ext_resource type="Shader" uid="uid://cre2bgvodjw36" path="res://assets/health.gdshader" id="1_yqeox"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfqe4"]
+bg_color = Color(0.25844875, 0.10114249, 0.112338506, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwqvq"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_obfps"]
+shader = ExtResource("1_yqeox")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eyimb"]
+bg_color = Color(0, 0, 1, 1)
+
+[node name="Menu" type="Node2D" unique_id=1128259270]
+
+[node name="Control" type="Control" parent="." unique_id=1350761217]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=142378876]
+layout_mode = 0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer" unique_id=227768875]
+layout_mode = 2
+
+[node name="pc_data" type="Node2D" parent="Control/PanelContainer/HBoxContainer" unique_id=1817514591]
+position = Vector2(690, 324)
+
+[node name="lucio" type="Node2D" parent="Control/PanelContainer/HBoxContainer/pc_data" unique_id=1142157626]
+
+[node name="Panel" type="Panel" parent="Control/PanelContainer/HBoxContainer/pc_data/lucio" unique_id=911893832]
+custom_minimum_size = Vector2(40, 40)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yfqe4")
+
+[node name="ATB" type="Control" parent="Control/PanelContainer/HBoxContainer/pc_data/lucio" unique_id=1697960957]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -2.5
+offset_top = -2.5
+offset_right = 42.5
+offset_bottom = 42.5
+script = ExtResource("1_vjb58")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/HBoxContainer/pc_data/lucio" unique_id=494645177]
+custom_minimum_size = Vector2(60, 0)
+offset_left = 50.0
+offset_right = 130.0
+offset_bottom = 58.0
+
+[node name="Health" type="ProgressBar" parent="Control/PanelContainer/HBoxContainer/pc_data/lucio/VBoxContainer" unique_id=768160375]
+custom_minimum_size = Vector2(10, 10)
+custom_maximum_size = Vector2(60, 18)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_styles/fill = SubResource("StyleBoxFlat_qwqvq")
+value = 100.0
+
+[node name="Energy" type="ProgressBar" parent="Control/PanelContainer/HBoxContainer/pc_data/lucio/VBoxContainer" unique_id=509374727]
+material = SubResource("ShaderMaterial_obfps")
+custom_minimum_size = Vector2(20, 0)
+custom_maximum_size = Vector2(60, 18)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 12
+theme_override_styles/fill = SubResource("StyleBoxFlat_eyimb")
+value = 100.0
