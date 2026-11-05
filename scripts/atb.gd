@@ -3,7 +3,7 @@ extends Control
 @export_range(0.0, 1.0) var progress: float = 0.0 : set = set_progress
 @export var background_color: Color = Color(0.2, 0.2, 0.2, 0.6)
 @export var fill_color: Color = Color(1.0, 0.8, 0.0, 1.0) # Color dorado ATB
-@export var ring_width: float = 5.0
+@export var ring_width: float = 4.0
 
 func set_progress(value: float) -> void:
 	progress = clamp(value, 0.0, 1.0)
