@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://crhfiwncsdvkl" path="res://assets/images/items/green_wood_tree.png" id="1_eyimb"]
 [ext_resource type="PackedScene" uid="uid://dxcwqbjmh53n4" path="res://scenes/menu.tscn" id="2_eyimb"]
 [ext_resource type="Texture2D" uid="uid://ceu1310yksy7y" path="res://assets/images/playable_characters/solas.png" id="3_57yxt"]
+[ext_resource type="Texture2D" uid="uid://3xp5up83gyms" path="res://assets/images/enemies/dracolibelula.png" id="4_draco"]
 
 [sub_resource type="Environment" id="Environment_r4ki7"]
 background_energy_multiplier = 3.0
@@ -41,6 +42,20 @@ albedo_texture = ExtResource("3_57yxt")
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_6ct3f")
 size = Vector2(1.76, 1.84)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_draco"]
+height = 2.0
+radius = 0.9
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_draco"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("4_draco")
+
+[sub_resource type="QuadMesh" id="QuadMesh_draco"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_draco")
+size = Vector2(2, 2)
 
 [node name="GreenWoods" type="Node3D" unique_id=1720841516]
 
@@ -1250,3 +1265,32 @@ shape = SubResource("CylinderShape3D_a4g7j")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MainCharacter" unique_id=745439703]
 mesh = SubResource("QuadMesh_uf2eg")
+
+[node name="Enemies" type="Node3D" parent="." unique_id=1990000001]
+
+[node name="Dragonfly A" type="CharacterBody3D" parent="Enemies" unique_id=1990000002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1.8, 4)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemies/Dragonfly A" unique_id=1990000003]
+shape = SubResource("CylinderShape3D_draco")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemies/Dragonfly A" unique_id=1990000004]
+mesh = SubResource("QuadMesh_draco")
+
+[node name="Dragonfly B" type="CharacterBody3D" parent="Enemies" unique_id=1990000005]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 2.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemies/Dragonfly B" unique_id=1990000006]
+shape = SubResource("CylinderShape3D_draco")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemies/Dragonfly B" unique_id=1990000007]
+mesh = SubResource("QuadMesh_draco")
+
+[node name="Dragonfly C" type="CharacterBody3D" parent="Enemies" unique_id=1990000008]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.8, 4)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemies/Dragonfly C" unique_id=1990000009]
+shape = SubResource("CylinderShape3D_draco")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemies/Dragonfly C" unique_id=1990000010]
+mesh = SubResource("QuadMesh_draco")
