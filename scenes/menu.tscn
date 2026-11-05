@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dxcwqbjmh53n4"]
 
 [ext_resource type="Script" uid="uid://dj48q75r1pon4" path="res://scripts/atb.gd" id="1_vjb58"]
-[ext_resource type="Shader" uid="uid://cre2bgvodjw36" path="res://assets/health.gdshader" id="1_yqeox"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfqe4"]
 bg_color = Color(0.25844875, 0.10114249, 0.112338506, 1)
@@ -12,9 +11,6 @@ corner_radius_bottom_left = 24
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwqvq"]
 bg_color = Color(1, 0, 0, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_obfps"]
-shader = ExtResource("1_yqeox")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eyimb"]
 bg_color = Color(0, 0, 1, 1)
@@ -35,7 +31,7 @@ offset_bottom = 40.0
 layout_mode = 2
 
 [node name="pc_data" type="Node2D" parent="Control/PanelContainer/HBoxContainer" unique_id=1817514591]
-position = Vector2(690, 324)
+position = Vector2(720, 324)
 
 [node name="lucio" type="Node2D" parent="Control/PanelContainer/HBoxContainer/pc_data" unique_id=1142157626]
 
@@ -70,7 +66,6 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_qwqvq")
 value = 100.0
 
 [node name="Energy" type="ProgressBar" parent="Control/PanelContainer/HBoxContainer/pc_data/lucio/VBoxContainer" unique_id=509374727]
-material = SubResource("ShaderMaterial_obfps")
 custom_minimum_size = Vector2(16, 0)
 custom_maximum_size = Vector2(48, 14.4)
 layout_mode = 2
