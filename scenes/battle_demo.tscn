@@ -2,13 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://crhfiwncsdvkl" path="res://assets/images/items/green_wood_tree.png" id="1_eyimb"]
 [ext_resource type="PackedScene" uid="uid://dxcwqbjmh53n4" path="res://scenes/menu.tscn" id="2_eyimb"]
-[ext_resource type="Texture2D" uid="uid://ceu1310yksy7y" path="res://assets/images/playable_characters/solas.png" id="3_57yxt"]
+[ext_resource type="Texture2D" uid="uid://ceu1310yksy7y" path="res://assets/images/playable_characters/lucio.png" id="3_57yxt"]
 [ext_resource type="Texture2D" uid="uid://3xp5up83gyms" path="res://assets/images/enemies/dracolibelula.png" id="4_draco"]
 
 [sub_resource type="Environment" id="Environment_r4ki7"]
 background_energy_multiplier = 3.0
+ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 5.0
 reflected_light_source = 2
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bidbc"]
@@ -28,7 +28,7 @@ height = 5.0
 radius = 2.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_yfqe4"]
-viewport_path = NodePath("MainCharacter/Camera3D/SubViewport")
+viewport_path = NodePath("MainCharacter/MainCamera/SubViewport")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_a4g7j"]
 height = 1.84
@@ -44,7 +44,6 @@ material = SubResource("StandardMaterial3D_6ct3f")
 size = Vector2(1.76, 1.84)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_draco"]
-height = 2.0
 radius = 0.9
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_draco"]
@@ -56,6 +55,15 @@ albedo_texture = ExtResource("4_draco")
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_draco")
 size = Vector2(2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ypyof"]
+size = Vector3(2, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_57yxt"]
+size = Vector3(2, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7h2vx"]
+albedo_color = Color(0.654902, 0.40392157, 0.12156863, 1)
 
 [node name="GreenWoods" type="Node3D" unique_id=1720841516]
 
@@ -1245,20 +1253,34 @@ shape = SubResource("CylinderShape3D_jpi7s")
 [node name="Obstacles" type="Node3D" parent="." unique_id=1366511839]
 
 [node name="MainCharacter" type="CharacterBody3D" parent="." unique_id=744679700]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92, 6)
 
-[node name="Camera3D" type="Camera3D" parent="MainCharacter" unique_id=653420556]
+[node name="MainCamera" type="Camera3D" parent="MainCharacter" unique_id=653420556]
 transform = Transform3D(1, 0, 0, 0, 0.9050573, 0.42528966, 0, -0.42528966, 0.9050573, 0, 2, 4)
+current = true
 
-[node name="SubViewport" type="SubViewport" parent="MainCharacter/Camera3D" unique_id=382015457]
+[node name="SubViewport" type="SubViewport" parent="MainCharacter/MainCamera" unique_id=382015457]
 transparent_bg = true
-size = Vector2i(1152, 648)
+size = Vector2i(1600, 900)
 
-[node name="Menu" parent="MainCharacter/Camera3D/SubViewport" unique_id=1128259270 instance=ExtResource("2_eyimb")]
+[node name="Menu" parent="MainCharacter/MainCamera/SubViewport" unique_id=1128259270 node_paths=PackedStringArray("MinimapSubviewport") instance=ExtResource("2_eyimb")]
+MinimapSubviewport = NodePath("../../../MinimapViewport")
 
-[node name="Menu" type="Sprite3D" parent="MainCharacter/Camera3D" unique_id=626219384]
+[node name="Menu" type="Sprite3D" parent="MainCharacter/MainCamera" unique_id=626219384]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+layers = 2
 texture = SubResource("ViewportTexture_yfqe4")
+
+[node name="MinimapViewport" type="SubViewport" parent="MainCharacter" unique_id=1582828984]
+handle_input_locally = false
+size = Vector2i(80, 60)
+render_target_update_mode = 4
+
+[node name="MinimapCamera" type="Camera3D" parent="MainCharacter/MinimapViewport" unique_id=518955062]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10, 6)
+cull_mask = 1048573
+projection = 1
+size = 15.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MainCharacter" unique_id=958924291]
 shape = SubResource("CylinderShape3D_a4g7j")
@@ -1269,7 +1291,7 @@ mesh = SubResource("QuadMesh_uf2eg")
 [node name="Enemies" type="Node3D" parent="." unique_id=1990000001]
 
 [node name="Dragonfly A" type="CharacterBody3D" parent="Enemies" unique_id=1990000002]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1.8, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1.8, 2)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemies/Dragonfly A" unique_id=1990000003]
 shape = SubResource("CylinderShape3D_draco")
@@ -1278,7 +1300,7 @@ shape = SubResource("CylinderShape3D_draco")
 mesh = SubResource("QuadMesh_draco")
 
 [node name="Dragonfly B" type="CharacterBody3D" parent="Enemies" unique_id=1990000005]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 1.5)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemies/Dragonfly B" unique_id=1990000006]
 shape = SubResource("CylinderShape3D_draco")
@@ -1287,10 +1309,26 @@ shape = SubResource("CylinderShape3D_draco")
 mesh = SubResource("QuadMesh_draco")
 
 [node name="Dragonfly C" type="CharacterBody3D" parent="Enemies" unique_id=1990000008]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.8, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.8, 2)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemies/Dragonfly C" unique_id=1990000009]
 shape = SubResource("CylinderShape3D_draco")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Enemies/Dragonfly C" unique_id=1990000010]
 mesh = SubResource("QuadMesh_draco")
+
+[node name="Interactive" type="Node3D" parent="." unique_id=852041282]
+
+[node name="Box" type="RigidBody3D" parent="Interactive" unique_id=540340918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.5, 4)
+mass = 12.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -0.2, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactive/Box" unique_id=2037033161]
+shape = SubResource("BoxShape3D_ypyof")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactive/Box" unique_id=1909776419]
+mesh = SubResource("BoxMesh_57yxt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_7h2vx")

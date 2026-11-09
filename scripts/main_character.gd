@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("action_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 	
 	# --- CÓDIGO PARA EMPUJAR OBJETOS RIGIDBODY3D ---
 	# Ajusta este valor para que el personaje empuje con más o menos fuerza
-	var push_force: float = 3
+	var push_force: float = 2.5
 
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
@@ -52,7 +52,7 @@ func _physics_process(delta: float) -> void:
 			
 			# Aplicamos un impulso central en el punto exacto del choque
 			# Multiplicamos por la velocidad actual para que empuje más fuerte si corre
-			var final_force = push_direction * velocity.length() * push_force
+			var final_force = push_direction * push_force
 			
 			# Usamos 'apply_central_impulse' para empujar el objeto uniformemente
 			collider.apply_central_impulse(final_force)

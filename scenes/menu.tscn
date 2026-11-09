@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://dxcwqbjmh53n4"]
 
+[ext_resource type="Script" uid="uid://5ag0301jsqf7" path="res://scripts/ui/ui.gd" id="1_con2f"]
 [ext_resource type="Script" uid="uid://dj48q75r1pon4" path="res://scripts/atb.gd" id="1_vjb58"]
+[ext_resource type="Script" uid="uid://xdiutf1jjlsd" path="res://scripts/ui/minimap_markers.gd" id="3_con2f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfqe4"]
-bg_color = Color(0.25844875, 0.10114249, 0.112338506, 1)
+bg_color = Color(0.05882353, 0.49411765, 0.06666667, 1)
 corner_radius_top_left = 24
 corner_radius_top_right = 24
 corner_radius_bottom_right = 24
@@ -12,10 +14,18 @@ corner_radius_bottom_left = 24
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwqvq"]
 bg_color = Color(1, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqeox"]
+bg_color = Color(0.31764707, 0.21960784, 0.21960784, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eyimb"]
 bg_color = Color(0, 0, 1, 1)
 
 [node name="Menu" type="Node2D" unique_id=1128259270]
+script = ExtResource("1_con2f")
 
 [node name="Control" type="Control" parent="." unique_id=1350761217]
 layout_mode = 3
@@ -30,36 +40,137 @@ offset_bottom = 40.0
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer" unique_id=227768875]
 layout_mode = 2
 
-[node name="pc_data" type="Node2D" parent="Control/PanelContainer/HBoxContainer" unique_id=1817514591]
-position = Vector2(720, 324)
+[node name="enemy_data" type="Node2D" parent="Control/PanelContainer/HBoxContainer" unique_id=1850000001]
+position = Vector2(940, 380)
 
-[node name="lucio" type="Node2D" parent="Control/PanelContainer/HBoxContainer/pc_data" unique_id=1142157626]
+[node name="dragonfly_a" type="Node2D" parent="Control/PanelContainer/HBoxContainer/enemy_data" unique_id=1850000002]
 
-[node name="Panel" type="Panel" parent="Control/PanelContainer/HBoxContainer/pc_data/lucio" unique_id=911893832]
-custom_minimum_size = Vector2(32, 32)
-offset_right = 32.0
-offset_bottom = 32.0
+[node name="Panel" type="Panel" parent="Control/PanelContainer/HBoxContainer/enemy_data/dragonfly_a" unique_id=1850000003]
+custom_minimum_size = Vector2(28, 28)
+offset_right = 28.0
+offset_bottom = 28.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_yfqe4")
 
-[node name="ATB" type="Control" parent="Control/PanelContainer/HBoxContainer/pc_data/lucio" unique_id=1697960957]
-custom_minimum_size = Vector2(36, 36)
+[node name="ATB" type="Control" parent="Control/PanelContainer/HBoxContainer/enemy_data/dragonfly_a" unique_id=1850000004]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 3
 anchors_preset = 0
 offset_left = -2.0
 offset_top = -2.0
-offset_right = 34.0
-offset_bottom = 34.0
+offset_right = 30.0
+offset_bottom = 30.0
+script = ExtResource("1_vjb58")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/HBoxContainer/enemy_data/dragonfly_a" unique_id=1850000005]
+custom_minimum_size = Vector2(42, 0)
+offset_left = 40.0
+offset_right = 104.0
+offset_bottom = 42.4
+
+[node name="Health" type="ProgressBar" parent="Control/PanelContainer/HBoxContainer/enemy_data/dragonfly_a/VBoxContainer" unique_id=1850000006]
+custom_minimum_size = Vector2(8, 8)
+custom_maximum_size = Vector2(44, 14.4)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+theme_override_styles/fill = SubResource("StyleBoxFlat_qwqvq")
+value = 100.0
+
+[node name="dragonfly_b" type="Node2D" parent="Control/PanelContainer/HBoxContainer/enemy_data" unique_id=1850000008]
+position = Vector2(0, -38)
+
+[node name="Panel" type="Panel" parent="Control/PanelContainer/HBoxContainer/enemy_data/dragonfly_b" unique_id=1850000009]
+custom_minimum_size = Vector2(28, 28)
+offset_right = 28.0
+offset_bottom = 28.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yfqe4")
+
+[node name="ATB" type="Control" parent="Control/PanelContainer/HBoxContainer/enemy_data/dragonfly_b" unique_id=1850000010]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 30.0
+offset_bottom = 30.0
+script = ExtResource("1_vjb58")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/HBoxContainer/enemy_data/dragonfly_b" unique_id=1850000011]
+custom_minimum_size = Vector2(44, 0)
+offset_left = 40.0
+offset_right = 104.0
+offset_bottom = 42.4
+
+[node name="Health" type="ProgressBar" parent="Control/PanelContainer/HBoxContainer/enemy_data/dragonfly_b/VBoxContainer" unique_id=1850000012]
+custom_minimum_size = Vector2(8, 8)
+custom_maximum_size = Vector2(44, 14.4)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+theme_override_styles/fill = SubResource("StyleBoxFlat_qwqvq")
+value = 100.0
+
+[node name="dragon_fly_c" type="Node2D" parent="Control/PanelContainer/HBoxContainer/enemy_data" unique_id=1850000014]
+position = Vector2(0, -76)
+
+[node name="Panel" type="Panel" parent="Control/PanelContainer/HBoxContainer/enemy_data/dragon_fly_c" unique_id=1850000015]
+custom_minimum_size = Vector2(28, 28)
+offset_right = 28.0
+offset_bottom = 28.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yfqe4")
+
+[node name="ATB" type="Control" parent="Control/PanelContainer/HBoxContainer/enemy_data/dragon_fly_c" unique_id=1850000016]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 30.0
+offset_bottom = 30.0
+script = ExtResource("1_vjb58")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/HBoxContainer/enemy_data/dragon_fly_c" unique_id=1850000017]
+custom_minimum_size = Vector2(44, 0)
+offset_left = 40.0
+offset_right = 104.0
+offset_bottom = 42.4
+
+[node name="Health" type="ProgressBar" parent="Control/PanelContainer/HBoxContainer/enemy_data/dragon_fly_c/VBoxContainer" unique_id=1850000018]
+custom_minimum_size = Vector2(8, 8)
+custom_maximum_size = Vector2(44, 14.4)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+theme_override_styles/fill = SubResource("StyleBoxFlat_qwqvq")
+value = 100.0
+
+[node name="pc_data" type="Node2D" parent="Control/PanelContainer/HBoxContainer" unique_id=1817514591]
+position = Vector2(940, 420)
+
+[node name="lucio" type="Node2D" parent="Control/PanelContainer/HBoxContainer/pc_data" unique_id=1142157626]
+
+[node name="Panel" type="Panel" parent="Control/PanelContainer/HBoxContainer/pc_data/lucio" unique_id=911893832]
+custom_minimum_size = Vector2(28, 28)
+offset_right = 28.0
+offset_bottom = 28.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yqeox")
+
+[node name="ATB" type="Control" parent="Control/PanelContainer/HBoxContainer/pc_data/lucio" unique_id=1697960957]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 30.0
+offset_bottom = 30.0
 script = ExtResource("1_vjb58")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/HBoxContainer/pc_data/lucio" unique_id=494645177]
-custom_minimum_size = Vector2(48, 0)
+custom_minimum_size = Vector2(44, 0)
 offset_left = 40.0
 offset_right = 104.0
-offset_bottom = 46.4
+offset_bottom = 42.4
 
 [node name="Health" type="ProgressBar" parent="Control/PanelContainer/HBoxContainer/pc_data/lucio/VBoxContainer" unique_id=768160375]
 custom_minimum_size = Vector2(8, 8)
-custom_maximum_size = Vector2(48, 14.4)
+custom_maximum_size = Vector2(44, 14.4)
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
 theme_override_styles/fill = SubResource("StyleBoxFlat_qwqvq")
@@ -67,9 +178,16 @@ value = 100.0
 
 [node name="Energy" type="ProgressBar" parent="Control/PanelContainer/HBoxContainer/pc_data/lucio/VBoxContainer" unique_id=509374727]
 custom_minimum_size = Vector2(16, 0)
-custom_maximum_size = Vector2(48, 14.4)
+custom_maximum_size = Vector2(44, 14.4)
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 10
 theme_override_styles/fill = SubResource("StyleBoxFlat_eyimb")
 value = 100.0
+
+[node name="Minimap" type="Node2D" parent="Control/PanelContainer/HBoxContainer" unique_id=1055486880]
+position = Vector2(940, 520)
+
+[node name="MinimapRect" type="TextureRect" parent="Control/PanelContainer/HBoxContainer/Minimap" unique_id=2027162020]
+custom_minimum_size = Vector2(80, 60)
+script = ExtResource("3_con2f")

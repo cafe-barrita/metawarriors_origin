@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://crhfiwncsdvkl" path="res://assets/images/items/green_wood_tree.png" id="1_mik3e"]
 [ext_resource type="Script" uid="uid://dpti0vfjb3obu" path="res://scripts/main_character.gd" id="3_6ct3f"]
-[ext_resource type="Texture2D" uid="uid://ceu1310yksy7y" path="res://assets/images/playable_characters/solas.png" id="4_6ct3f"]
+[ext_resource type="Texture2D" uid="uid://ceu1310yksy7y" path="res://assets/images/playable_characters/lucio.png" id="4_6ct3f"]
 
 [sub_resource type="Environment" id="Environment_r4ki7"]
 background_energy_multiplier = 3.0
+ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 5.0
 reflected_light_source = 2
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bidbc"]
@@ -15,11 +15,11 @@ reflected_light_source = 2
 [sub_resource type="BoxShape3D" id="BoxShape3D_qwd5g"]
 size = Vector3(100, 1, 100)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8b43r"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ssuku"]
 albedo_color = Color(0, 0.568627, 0.345098, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_uy0hc"]
-material = SubResource("StandardMaterial3D_8b43r")
+material = SubResource("StandardMaterial3D_ssuku")
 size = Vector3(100, 1, 100)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_jpi7s"]
@@ -27,8 +27,10 @@ height = 5.0
 radius = 2.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ssuku"]
+size = Vector3(2, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6ct3f"]
+size = Vector3(2, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4g7j"]
 albedo_color = Color(0.654902, 0.40392157, 0.12156863, 1)
@@ -1235,7 +1237,9 @@ shape = SubResource("CylinderShape3D_jpi7s")
 
 [node name="Box" type="RigidBody3D" parent="Interactive" unique_id=147760990]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.5, 32)
-mass = 10.0
+mass = 12.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -0.2, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactive/Box" unique_id=1648247058]
 shape = SubResource("BoxShape3D_ssuku")
