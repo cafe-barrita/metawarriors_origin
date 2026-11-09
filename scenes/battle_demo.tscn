@@ -3,7 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://crhfiwncsdvkl" path="res://assets/images/items/green_wood_tree.png" id="1_eyimb"]
 [ext_resource type="PackedScene" uid="uid://dxcwqbjmh53n4" path="res://scenes/menu.tscn" id="2_eyimb"]
 [ext_resource type="Texture2D" uid="uid://ceu1310yksy7y" path="res://assets/images/playable_characters/lucio.png" id="3_57yxt"]
+[ext_resource type="Shader" uid="uid://vu3w1ybwo2fl" path="res://assets/shaders/party_minimap_marker.gdshader" id="4_57yxt"]
 [ext_resource type="Texture2D" uid="uid://3xp5up83gyms" path="res://assets/images/enemies/dracolibelula.png" id="4_draco"]
+[ext_resource type="Shader" uid="uid://r5p6q1uu0crs" path="res://assets/shaders/enemy_minimap_marker.gdshader" id="6_7h2vx"]
 
 [sub_resource type="Environment" id="Environment_r4ki7"]
 background_energy_multiplier = 3.0
@@ -43,6 +45,14 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_6ct3f")
 size = Vector2(1.76, 1.84)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bpbh4"]
+render_priority = 0
+shader = ExtResource("4_57yxt")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_te0d6"]
+material = SubResource("ShaderMaterial_bpbh4")
+size = Vector2(1, 1)
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_draco"]
 radius = 0.9
 
@@ -55,6 +65,14 @@ albedo_texture = ExtResource("4_draco")
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_draco")
 size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_obfps"]
+render_priority = 0
+shader = ExtResource("6_7h2vx")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7swc8"]
+material = SubResource("ShaderMaterial_obfps")
+size = Vector2(1.5, 1.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ypyof"]
 size = Vector3(2, 1, 1)
@@ -1252,11 +1270,12 @@ shape = SubResource("CylinderShape3D_jpi7s")
 
 [node name="Obstacles" type="Node3D" parent="." unique_id=1366511839]
 
-[node name="MainCharacter" type="CharacterBody3D" parent="." unique_id=744679700]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92, 6)
+[node name="MainCharacter" type="Node3D" parent="." unique_id=649947704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92, 0)
 
 [node name="MainCamera" type="Camera3D" parent="MainCharacter" unique_id=653420556]
-transform = Transform3D(1, 0, 0, 0, 0.9050573, 0.42528966, 0, -0.42528966, 0.9050573, 0, 2, 4)
+transform = Transform3D(1, 0, 0, 0, 0.9050573, 0.42528966, 0, -0.42528966, 0.9050573, 0, 3, 9)
+cull_mask = 1048571
 current = true
 
 [node name="SubViewport" type="SubViewport" parent="MainCharacter/MainCamera" unique_id=382015457]
@@ -1277,21 +1296,31 @@ size = Vector2i(80, 60)
 render_target_update_mode = 4
 
 [node name="MinimapCamera" type="Camera3D" parent="MainCharacter/MinimapViewport" unique_id=518955062]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10, 6)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10, 0)
 cull_mask = 1048573
 projection = 1
 size = 15.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MainCharacter" unique_id=958924291]
+[node name="Lucio" type="CharacterBody3D" parent="MainCharacter" unique_id=405144263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MainCharacter/Lucio" unique_id=958924291]
 shape = SubResource("CylinderShape3D_a4g7j")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MainCharacter" unique_id=745439703]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MainCharacter/Lucio" unique_id=745439703]
 mesh = SubResource("QuadMesh_uf2eg")
+skeleton = NodePath("../..")
+
+[node name="Marker" type="MeshInstance3D" parent="MainCharacter/Lucio" unique_id=226702232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+layers = 4
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_te0d6")
 
 [node name="Enemies" type="Node3D" parent="." unique_id=1990000001]
 
 [node name="Dragonfly A" type="CharacterBody3D" parent="Enemies" unique_id=1990000002]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1.8, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.8, -1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemies/Dragonfly A" unique_id=1990000003]
 shape = SubResource("CylinderShape3D_draco")
@@ -1299,8 +1328,14 @@ shape = SubResource("CylinderShape3D_draco")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Enemies/Dragonfly A" unique_id=1990000004]
 mesh = SubResource("QuadMesh_draco")
 
+[node name="Marker" type="MeshInstance3D" parent="Enemies/Dragonfly A" unique_id=2113283163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+layers = 4
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_7swc8")
+
 [node name="Dragonfly B" type="CharacterBody3D" parent="Enemies" unique_id=1990000005]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, -1.5)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemies/Dragonfly B" unique_id=1990000006]
 shape = SubResource("CylinderShape3D_draco")
@@ -1308,8 +1343,14 @@ shape = SubResource("CylinderShape3D_draco")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Enemies/Dragonfly B" unique_id=1990000007]
 mesh = SubResource("QuadMesh_draco")
 
+[node name="Marker" type="MeshInstance3D" parent="Enemies/Dragonfly B" unique_id=1236653967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+layers = 4
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_7swc8")
+
 [node name="Dragonfly C" type="CharacterBody3D" parent="Enemies" unique_id=1990000008]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.8, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.8, -1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemies/Dragonfly C" unique_id=1990000009]
 shape = SubResource("CylinderShape3D_draco")
@@ -1317,10 +1358,16 @@ shape = SubResource("CylinderShape3D_draco")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Enemies/Dragonfly C" unique_id=1990000010]
 mesh = SubResource("QuadMesh_draco")
 
+[node name="Marker" type="MeshInstance3D" parent="Enemies/Dragonfly C" unique_id=1549818132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+layers = 4
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_7swc8")
+
 [node name="Interactive" type="Node3D" parent="." unique_id=852041282]
 
 [node name="Box" type="RigidBody3D" parent="Interactive" unique_id=540340918]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.5, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.5, 3)
 mass = 12.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -0.2, 0)

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://5ag0301jsqf7" path="res://scripts/ui/ui.gd" id="1_con2f"]
 [ext_resource type="Script" uid="uid://dj48q75r1pon4" path="res://scripts/atb.gd" id="1_vjb58"]
-[ext_resource type="Script" uid="uid://xdiutf1jjlsd" path="res://scripts/ui/minimap_markers.gd" id="3_con2f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfqe4"]
 bg_color = Color(0.05882353, 0.49411765, 0.06666667, 1)
@@ -189,5 +188,5 @@ value = 100.0
 position = Vector2(940, 520)
 
 [node name="MinimapRect" type="TextureRect" parent="Control/PanelContainer/HBoxContainer/Minimap" unique_id=2027162020]
+self_modulate = Color(1, 1, 1, 0.827451)
 custom_minimum_size = Vector2(80, 60)
-script = ExtResource("3_con2f")
