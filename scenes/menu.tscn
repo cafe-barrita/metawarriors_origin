@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://5ag0301jsqf7" path="res://scripts/ui/ui.gd" id="1_con2f"]
 [ext_resource type="Script" uid="uid://dj48q75r1pon4" path="res://scripts/atb.gd" id="1_vjb58"]
+[ext_resource type="Script" uid="uid://bugcyw8h852v6" path="res://scripts/ui/log.gd" id="3_con2f"]
+[ext_resource type="Script" uid="uid://cjevwyiavc6ux" path="res://scripts/ui/combat_menu.gd" id="4_mhnvy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfqe4"]
 bg_color = Color(0.05882353, 0.49411765, 0.06666667, 1)
@@ -107,16 +109,16 @@ theme_override_font_sizes/font_size = 10
 theme_override_styles/fill = SubResource("StyleBoxFlat_qwqvq")
 value = 100.0
 
-[node name="dragon_fly_c" type="Node2D" parent="Control/PanelContainer/HBoxContainer/enemy_data" unique_id=1850000014]
+[node name="dragonfly_c" type="Node2D" parent="Control/PanelContainer/HBoxContainer/enemy_data" unique_id=1850000014]
 position = Vector2(0, -76)
 
-[node name="Panel" type="Panel" parent="Control/PanelContainer/HBoxContainer/enemy_data/dragon_fly_c" unique_id=1850000015]
+[node name="Panel" type="Panel" parent="Control/PanelContainer/HBoxContainer/enemy_data/dragonfly_c" unique_id=1850000015]
 custom_minimum_size = Vector2(28, 28)
 offset_right = 28.0
 offset_bottom = 28.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_yfqe4")
 
-[node name="ATB" type="Control" parent="Control/PanelContainer/HBoxContainer/enemy_data/dragon_fly_c" unique_id=1850000016]
+[node name="ATB" type="Control" parent="Control/PanelContainer/HBoxContainer/enemy_data/dragonfly_c" unique_id=1850000016]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 3
 anchors_preset = 0
@@ -126,13 +128,13 @@ offset_right = 30.0
 offset_bottom = 30.0
 script = ExtResource("1_vjb58")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/HBoxContainer/enemy_data/dragon_fly_c" unique_id=1850000017]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/HBoxContainer/enemy_data/dragonfly_c" unique_id=1850000017]
 custom_minimum_size = Vector2(44, 0)
 offset_left = 40.0
 offset_right = 104.0
 offset_bottom = 42.4
 
-[node name="Health" type="ProgressBar" parent="Control/PanelContainer/HBoxContainer/enemy_data/dragon_fly_c/VBoxContainer" unique_id=1850000018]
+[node name="Health" type="ProgressBar" parent="Control/PanelContainer/HBoxContainer/enemy_data/dragonfly_c/VBoxContainer" unique_id=1850000018]
 custom_minimum_size = Vector2(8, 8)
 custom_maximum_size = Vector2(44, 14.4)
 layout_mode = 2
@@ -189,4 +191,68 @@ position = Vector2(940, 520)
 
 [node name="MinimapRect" type="TextureRect" parent="Control/PanelContainer/HBoxContainer/Minimap" unique_id=2027162020]
 self_modulate = Color(1, 1, 1, 0.827451)
-custom_minimum_size = Vector2(80, 60)
+custom_minimum_size = Vector2(100, 80)
+
+[node name="Log" type="Node2D" parent="Control/PanelContainer/HBoxContainer" unique_id=594622688]
+position = Vector2(740, 520)
+script = ExtResource("3_con2f")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/PanelContainer/HBoxContainer/Log" unique_id=524992593]
+custom_minimum_size = Vector2(160, 80)
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/HBoxContainer/Log/ScrollContainer" unique_id=498527883]
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 2
+
+[node name="combat_menu" type="Node2D" parent="Control/PanelContainer/HBoxContainer" unique_id=1157906613]
+visible = false
+position = Vector2(540, 520)
+script = ExtResource("4_mhnvy")
+
+[node name="Defend" type="Button" parent="Control/PanelContainer/HBoxContainer/combat_menu" unique_id=677546402]
+offset_left = 52.0
+offset_right = 106.0
+offset_bottom = 25.0
+theme_override_font_sizes/font_size = 12
+text = "Defend"
+
+[node name="Move" type="Button" parent="Control/PanelContainer/HBoxContainer/combat_menu" unique_id=1760408584]
+offset_left = 20.0
+offset_top = 24.0
+offset_right = 74.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 12
+text = "Move"
+
+[node name="Item" type="Button" parent="Control/PanelContainer/HBoxContainer/combat_menu" unique_id=953670519]
+offset_left = 84.0
+offset_top = 24.0
+offset_right = 138.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 12
+text = "Item"
+
+[node name="Attack" type="Button" parent="Control/PanelContainer/HBoxContainer/combat_menu" unique_id=1314825221]
+offset_left = 52.0
+offset_top = 48.0
+offset_right = 106.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 12
+text = "Attack"
+
+[node name="Skill" type="Button" parent="Control/PanelContainer/HBoxContainer/combat_menu" unique_id=1040765165]
+offset_left = -12.0
+offset_top = -16.0
+offset_right = 42.0
+offset_bottom = 9.0
+theme_override_font_sizes/font_size = 12
+text = "Skill"
+
+[node name="Special" type="Button" parent="Control/PanelContainer/HBoxContainer/combat_menu" unique_id=138506202]
+offset_left = 116.0
+offset_top = -16.0
+offset_right = 170.0
+offset_bottom = 9.0
+theme_override_font_sizes/font_size = 12
+text = "Env(?)"

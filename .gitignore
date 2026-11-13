@@ -1,6 +1,7 @@
 *.uid
 *.tmp
 addons
+.agents
 
 # Godot 4+ specific ignores
 .godot/

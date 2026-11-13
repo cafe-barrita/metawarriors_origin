@@ -31,8 +31,8 @@ func _draw() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if progress <= 1.0:
+	if progress < 1.0:
 		progress += delta * no_action_speed * character_speed
 		if progress >= 1.0:
 			progress = 1.0
-			# TODO send signal to queue action selection
+			EventBus.atb_filled.emit(get_parent().name)
