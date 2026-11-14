@@ -2,6 +2,8 @@ extends Node
 
 
 signal atb_filled(character)
+signal player_character_turn_start(character)
+signal player_character_turn_end(character)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

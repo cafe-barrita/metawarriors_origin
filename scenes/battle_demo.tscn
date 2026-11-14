@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dlswh030qc5uf"]
 
 [ext_resource type="Texture2D" uid="uid://crhfiwncsdvkl" path="res://assets/images/items/green_wood_tree.png" id="1_eyimb"]
+[ext_resource type="Script" uid="uid://iwwqousc2411" path="res://scripts/scenes/scene_manager.gd" id="1_te0d6"]
 [ext_resource type="PackedScene" uid="uid://dxcwqbjmh53n4" path="res://scenes/menu.tscn" id="2_eyimb"]
 [ext_resource type="Texture2D" uid="uid://ceu1310yksy7y" path="res://assets/images/playable_characters/lucio.png" id="3_57yxt"]
 [ext_resource type="Shader" uid="uid://vu3w1ybwo2fl" path="res://assets/shaders/party_minimap_marker.gdshader" id="4_57yxt"]
@@ -84,6 +85,7 @@ size = Vector3(2, 1, 1)
 albedo_color = Color(0.654902, 0.40392157, 0.12156863, 1)
 
 [node name="GreenWoods" type="Node3D" unique_id=1720841516]
+script = ExtResource("1_te0d6")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=744595069]
 environment = SubResource("Environment_r4ki7")
