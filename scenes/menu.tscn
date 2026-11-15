@@ -3,7 +3,14 @@
 [ext_resource type="Script" uid="uid://5ag0301jsqf7" path="res://scripts/ui/ui.gd" id="1_con2f"]
 [ext_resource type="Script" uid="uid://dj48q75r1pon4" path="res://scripts/atb.gd" id="1_vjb58"]
 [ext_resource type="Script" uid="uid://bugcyw8h852v6" path="res://scripts/ui/log.gd" id="3_con2f"]
+[ext_resource type="Script" uid="uid://c5mw4el2r433l" path="res://scripts/ui/current_character.gd" id="3_mj5lg"]
 [ext_resource type="Script" uid="uid://cjevwyiavc6ux" path="res://scripts/ui/combat_menu.gd" id="4_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://dttyvivbt0as2" path="res://assets/images/icons/controllers/Xbox Series/Default/xbox_button_color_y.png" id="5_13sgg"]
+[ext_resource type="Texture2D" uid="uid://b1koa8ti8uqkc" path="res://assets/images/icons/controllers/Xbox Series/Default/xbox_button_color_x.png" id="6_i6lef"]
+[ext_resource type="Texture2D" uid="uid://dei3ra2f363vr" path="res://assets/images/icons/controllers/Xbox Series/Default/xbox_button_color_b.png" id="7_70i5f"]
+[ext_resource type="Texture2D" uid="uid://bch8dw7ydjis7" path="res://assets/images/icons/controllers/Xbox Series/Default/xbox_button_color_a.png" id="8_mj5lg"]
+[ext_resource type="Texture2D" uid="uid://cuqo0uvlvvbrb" path="res://assets/images/icons/controllers/Xbox Series/Default/xbox_lb.png" id="9_70i5f"]
+[ext_resource type="Texture2D" uid="uid://c8w7vc2u7bv3r" path="res://assets/images/icons/controllers/Xbox Series/Default/xbox_rb.png" id="10_mj5lg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfqe4"]
 bg_color = Color(0.05882353, 0.49411765, 0.06666667, 1)
@@ -147,6 +154,17 @@ position = Vector2(940, 420)
 
 [node name="lucio" type="Node2D" parent="Control/PanelContainer/HBoxContainer/pc_data" unique_id=1142157626]
 
+[node name="TextureRect" type="ColorRect" parent="Control/PanelContainer/HBoxContainer/pc_data/lucio" unique_id=1527856942]
+visible = false
+modulate = Color(1, 1, 1, 0.54509807)
+custom_minimum_size = Vector2(120, 10)
+custom_maximum_size = Vector2(-1, 42)
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 116.0
+offset_bottom = 36.0
+script = ExtResource("3_mj5lg")
+
 [node name="Panel" type="Panel" parent="Control/PanelContainer/HBoxContainer/pc_data/lucio" unique_id=911893832]
 custom_minimum_size = Vector2(28, 28)
 offset_right = 28.0
@@ -211,48 +229,60 @@ position = Vector2(540, 520)
 script = ExtResource("4_mhnvy")
 
 [node name="Defend" type="Button" parent="Control/PanelContainer/HBoxContainer/combat_menu" unique_id=677546402]
-offset_left = 52.0
-offset_right = 106.0
+offset_left = 44.0
+offset_right = 110.0
 offset_bottom = 25.0
+theme_override_constants/icon_max_width = 12
 theme_override_font_sizes/font_size = 12
 text = "Defend"
+icon = ExtResource("5_13sgg")
 
 [node name="Move" type="Button" parent="Control/PanelContainer/HBoxContainer/combat_menu" unique_id=1760408584]
 offset_left = 20.0
 offset_top = 24.0
 offset_right = 74.0
 offset_bottom = 49.0
+theme_override_constants/icon_max_width = 12
 theme_override_font_sizes/font_size = 12
 text = "Move"
+icon = ExtResource("6_i6lef")
 
 [node name="Item" type="Button" parent="Control/PanelContainer/HBoxContainer/combat_menu" unique_id=953670519]
 offset_left = 84.0
 offset_top = 24.0
 offset_right = 138.0
 offset_bottom = 49.0
+theme_override_constants/icon_max_width = 12
 theme_override_font_sizes/font_size = 12
 text = "Item"
+icon = ExtResource("7_70i5f")
 
 [node name="Attack" type="Button" parent="Control/PanelContainer/HBoxContainer/combat_menu" unique_id=1314825221]
 offset_left = 52.0
 offset_top = 48.0
-offset_right = 106.0
+offset_right = 112.0
 offset_bottom = 73.0
+theme_override_constants/icon_max_width = 12
 theme_override_font_sizes/font_size = 12
 text = "Attack"
+icon = ExtResource("8_mj5lg")
 
 [node name="Skill" type="Button" parent="Control/PanelContainer/HBoxContainer/combat_menu" unique_id=1040765165]
-offset_left = -12.0
-offset_top = -16.0
-offset_right = 42.0
-offset_bottom = 9.0
+offset_left = -4.0
+offset_top = -24.0
+offset_right = 63.0
+offset_bottom = 1.0
+theme_override_constants/icon_max_width = 14
 theme_override_font_sizes/font_size = 12
 text = "Skill"
+icon = ExtResource("9_70i5f")
 
 [node name="Special" type="Button" parent="Control/PanelContainer/HBoxContainer/combat_menu" unique_id=138506202]
-offset_left = 116.0
-offset_top = -16.0
-offset_right = 170.0
-offset_bottom = 9.0
+offset_left = 100.0
+offset_top = -24.0
+offset_right = 167.0
+offset_bottom = 1.0
+theme_override_constants/icon_max_width = 14
 theme_override_font_sizes/font_size = 12
-text = "Env(?)"
+text = "Special"
+icon = ExtResource("10_mj5lg")

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cp4qcby3vfcvy"]
 
-[ext_resource type="Texture2D" uid="uid://crhfiwncsdvkl" path="res://assets/images/items/green_wood_tree.png" id="1_mik3e"]
-[ext_resource type="Script" uid="uid://dpti0vfjb3obu" path="res://scripts/main_character.gd" id="3_6ct3f"]
-[ext_resource type="Texture2D" uid="uid://ceu1310yksy7y" path="res://assets/images/playable_characters/lucio.png" id="4_6ct3f"]
+[ext_resource type="Texture2D" uid="uid://crhfiwncsdvkl" path="res://assets/images/items/green_wood_tree.png" id="1_ad8be"]
+[ext_resource type="Script" uid="uid://dpti0vfjb3obu" path="res://scripts/main_character.gd" id="2_4w5fa"]
+[ext_resource type="Texture2D" uid="uid://ceu1310yksy7y" path="res://assets/images/playable_characters/lucio.png" id="3_acep7"]
 
 [sub_resource type="Environment" id="Environment_r4ki7"]
 background_energy_multiplier = 3.0
@@ -41,14 +41,14 @@ radius = 0.9
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ct3f"]
 transparency = 1
-albedo_texture = ExtResource("4_6ct3f")
+albedo_texture = ExtResource("3_acep7")
 
 [sub_resource type="QuadMesh" id="QuadMesh_uf2eg"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_6ct3f")
 size = Vector2(1.76, 1.84)
 
-[node name="GreenWoods" type="Node3D" unique_id=1720841516]
+[node name="PikeWoods" type="Node3D" unique_id=1720841516]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=744595069]
 environment = SubResource("Environment_r4ki7")
@@ -73,7 +73,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2.5, 45)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree01" unique_id=1173278031]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree01" unique_id=111728572]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -84,7 +84,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.5, 45)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree02" unique_id=1927552542]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree02" unique_id=1801793823]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -95,7 +95,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 2.5, 44)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree03" unique_id=596894002]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree03" unique_id=2066990995]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -106,7 +106,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 2.5, 43)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree04" unique_id=1630460177]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree04" unique_id=1331184056]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -117,7 +117,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 2.5, 42)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree05" unique_id=470232459]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree05" unique_id=1141188323]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -128,7 +128,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 2.5, 43)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree06" unique_id=1219232830]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree06" unique_id=618453203]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -139,7 +139,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 2.5, 42)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree07" unique_id=914705950]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree07" unique_id=99319586]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -150,7 +150,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.5, 2.5, 41)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree08" unique_id=1636478497]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree08" unique_id=1338914767]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -161,7 +161,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 2.5, 40)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree09" unique_id=1458641581]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree09" unique_id=2022535817]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -172,7 +172,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 2.5, 37)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree10" unique_id=1806036974]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree10" unique_id=2075691337]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -183,7 +183,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 2.5, 34)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree11" unique_id=552093453]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree11" unique_id=1748776613]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -194,7 +194,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 2.5, 31)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree12" unique_id=1425316651]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree12" unique_id=398163520]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -205,7 +205,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.5, 2.5, 27.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree13" unique_id=2022305304]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree13" unique_id=1148549705]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -216,7 +216,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 2.5, 24)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree14" unique_id=617741632]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree14" unique_id=1363546778]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -227,7 +227,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.5, 2.5, 21)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree15" unique_id=120130027]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree15" unique_id=1653881477]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -238,7 +238,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 2.5, 18.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree16" unique_id=2141686402]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree16" unique_id=685836819]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -249,7 +249,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 2.5, 15.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree17" unique_id=1779084589]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree17" unique_id=1993342799]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -260,7 +260,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 2.5, 12)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree18" unique_id=1807668442]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree18" unique_id=2007147381]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -271,7 +271,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.5, 2.5, 9)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree19" unique_id=1849000019]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree19" unique_id=1750799566]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -282,7 +282,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 2.5, 6)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree20" unique_id=281566387]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree20" unique_id=153122992]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -293,7 +293,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 2.5, 2.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree21" unique_id=134042576]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree21" unique_id=2105846003]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -304,7 +304,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.5, 2.5, 0)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree22" unique_id=1957950131]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree22" unique_id=1345606580]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -315,7 +315,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 2.5, -3)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree23" unique_id=939049083]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree23" unique_id=688109879]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -326,7 +326,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.5, 2.5, -5.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree24" unique_id=742060769]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree24" unique_id=525543237]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -337,7 +337,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.25, 2.5, -8.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree25" unique_id=1808264643]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree25" unique_id=1756130991]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -348,7 +348,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 2.5, -11)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree26" unique_id=2141653742]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree26" unique_id=633239664]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -359,7 +359,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.5, 2.5, -14)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree27" unique_id=732133628]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree27" unique_id=387981894]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -370,7 +370,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 2.5, -16.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree28" unique_id=1236118792]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree28" unique_id=1682547392]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -381,7 +381,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.5, 2.5, -19)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree29" unique_id=548211243]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree29" unique_id=1421966570]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -392,7 +392,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.25, 2.5, -22)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree30" unique_id=887106575]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree30" unique_id=449423833]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -403,7 +403,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.75, 2.5, -24.75)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree31" unique_id=1893389654]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree31" unique_id=269913475]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -414,7 +414,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 2.5, -27.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree32" unique_id=674201181]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree32" unique_id=535880920]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -425,7 +425,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5, 2.5, -30)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree33" unique_id=869231799]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree33" unique_id=2039384103]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -436,7 +436,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 2.5, -32.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree34" unique_id=1862060592]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree34" unique_id=649200071]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -447,7 +447,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 2.5, -36)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree35" unique_id=1503777440]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree35" unique_id=1999149960]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -458,7 +458,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 2.5, -38)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree36" unique_id=441273104]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree36" unique_id=206939174]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -469,7 +469,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 2.5, -41)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree37" unique_id=139757824]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree37" unique_id=582889422]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -480,7 +480,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 2.5, -44)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree38" unique_id=2052500929]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree38" unique_id=1502385278]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -491,7 +491,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 2.5, -45)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree39" unique_id=829272505]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree39" unique_id=2008934822]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -502,7 +502,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 2.5, -44)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree40" unique_id=1750744631]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree40" unique_id=1494040021]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -513,7 +513,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 2.5, -44.55)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree41" unique_id=1659877055]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree41" unique_id=698309832]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -524,7 +524,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.75, 2.5, -44)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree42" unique_id=1713591062]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree42" unique_id=254839718]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -535,7 +535,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.25, 2.5, -44.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree43" unique_id=486553187]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree43" unique_id=473132687]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -546,7 +546,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 2.5, -44)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree44" unique_id=293908010]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree44" unique_id=512770781]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -557,7 +557,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 2.5, -43)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree45" unique_id=59693905]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree45" unique_id=50865202]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -568,7 +568,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 2.5, -43.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree46" unique_id=1218030899]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree46" unique_id=966506609]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -579,7 +579,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 2.5, -43.25)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree47" unique_id=1515482939]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree47" unique_id=482146544]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -590,7 +590,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.5, -43)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree48" unique_id=2034718111]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree48" unique_id=297014139]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -601,7 +601,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.5, -42.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree49" unique_id=1568017290]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree49" unique_id=385472223]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -612,7 +612,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 2.5, -43)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree50" unique_id=467562197]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree50" unique_id=1359842774]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -623,7 +623,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 2.5, -42.75)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree51" unique_id=204784602]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree51" unique_id=344699849]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -634,7 +634,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 2.5, -42.75)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree52" unique_id=890319696]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree52" unique_id=1814619322]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -645,7 +645,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.5, -42.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree53" unique_id=2100154428]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree53" unique_id=1539528080]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -656,7 +656,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2.5, -42.25)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree54" unique_id=1936160668]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree54" unique_id=1286936618]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -667,7 +667,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2.5, -41.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree55" unique_id=1751908545]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree55" unique_id=1073300763]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -678,7 +678,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 2.5, -41.25)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree56" unique_id=1756385485]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree56" unique_id=584109928]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -689,7 +689,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 2.5, -40.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree57" unique_id=2055938763]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree57" unique_id=2092017217]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -700,7 +700,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 2.5, -39.75)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree58" unique_id=2053521447]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree58" unique_id=174324463]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -711,7 +711,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 2.5, -39)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree59" unique_id=68332734]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree59" unique_id=1241867183]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -722,7 +722,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.25, 2.5, -38.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree60" unique_id=392666176]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree60" unique_id=247698024]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -733,7 +733,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 2.5, -37.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree61" unique_id=303644699]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree61" unique_id=1971931474]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -744,7 +744,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 2.5, -37)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree62" unique_id=1677789195]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree62" unique_id=2047727628]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -755,7 +755,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 2.5, -36)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree63" unique_id=382819020]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree63" unique_id=1080860990]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -766,7 +766,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 2.5, -35)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree64" unique_id=870400561]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree64" unique_id=1564487939]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -777,7 +777,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 2.5, -34)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree65" unique_id=799453976]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree65" unique_id=1819370922]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -788,7 +788,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 2.5, -33.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree66" unique_id=1665615627]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree66" unique_id=1011914794]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -799,7 +799,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 2.5, -32)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree67" unique_id=1200339457]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree67" unique_id=1210036187]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -810,7 +810,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 2.5, -30)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree68" unique_id=331502442]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree68" unique_id=432217180]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -821,7 +821,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 2.5, -28)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree69" unique_id=496832466]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree69" unique_id=815442710]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -832,7 +832,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 2.5, -26)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree70" unique_id=439280186]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree70" unique_id=1388779066]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -843,7 +843,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 2.5, -24)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree71" unique_id=340486071]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree71" unique_id=955265560]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -854,7 +854,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 2.5, -21)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree72" unique_id=929812430]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree72" unique_id=55077109]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -865,7 +865,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 2.5, -18)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree73" unique_id=1821258081]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree73" unique_id=1742510625]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -876,7 +876,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 2.5, -16)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree74" unique_id=946236718]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree74" unique_id=1039180195]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -887,7 +887,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 2.5, -14)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree75" unique_id=599044364]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree75" unique_id=1159903039]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -898,7 +898,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 2.5, -12)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree76" unique_id=1714182455]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree76" unique_id=1142229191]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -909,7 +909,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 2.5, -9)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree77" unique_id=55838510]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree77" unique_id=899170083]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -920,7 +920,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 2.5, -6)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree78" unique_id=1772256833]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree78" unique_id=1796217314]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -931,7 +931,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.5, 2.5, -4)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree79" unique_id=2015745328]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree79" unique_id=397744610]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -942,7 +942,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 2.5, -1)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree80" unique_id=1127496535]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree80" unique_id=1543027620]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -953,7 +953,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.5, 2.5, 2)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree81" unique_id=935391497]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree81" unique_id=832143555]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -964,7 +964,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 2.5, 5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree82" unique_id=1140562830]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree82" unique_id=320132447]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -975,7 +975,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 2.5, 7)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree83" unique_id=1142002154]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree83" unique_id=1673969439]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -986,7 +986,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 2.5, 9)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree84" unique_id=1390170015]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree84" unique_id=2049621475]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -997,7 +997,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.5, 2.5, 12)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree85" unique_id=608719804]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree85" unique_id=1352039441]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1008,7 +1008,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.5, 2.5, 14)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree86" unique_id=2135817690]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree86" unique_id=1164384180]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1019,7 +1019,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 2.5, 16.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree87" unique_id=209542879]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree87" unique_id=1893427670]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1030,7 +1030,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.75, 2.5, 18.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree88" unique_id=982016166]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree88" unique_id=1899609103]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1041,7 +1041,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 2.5, 21)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree89" unique_id=1163354409]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree89" unique_id=459420929]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1052,7 +1052,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5, 2.5, 24)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree90" unique_id=2100896387]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree90" unique_id=429435167]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1063,7 +1063,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.75, 2.5, 26)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree91" unique_id=2090848023]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree91" unique_id=976906669]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1074,7 +1074,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 2.5, 28)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree92" unique_id=1213521181]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree92" unique_id=1983443126]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1085,7 +1085,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.75, 2.5, 31)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree93" unique_id=1366463623]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree93" unique_id=1532706194]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1096,7 +1096,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 2.5, 34)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree94" unique_id=211163089]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree94" unique_id=856297091]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1107,7 +1107,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5, 2.5, 36.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree95" unique_id=2002794717]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree95" unique_id=733664005]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1118,7 +1118,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.5, 39)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree96" unique_id=813760085]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree96" unique_id=1621156775]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1129,7 +1129,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.75, 2.5, 41)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree97" unique_id=318882213]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree97" unique_id=1198887319]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1140,7 +1140,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 2.5, 42.25)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree98" unique_id=713122167]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree98" unique_id=684671115]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1151,7 +1151,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 2.5, 43)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree99" unique_id=1677819489]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree99" unique_id=668714298]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1162,7 +1162,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 2.5, 43.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree100" unique_id=1119279107]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree100" unique_id=2135713619]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1173,7 +1173,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.25, 2.5, 44)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree101" unique_id=1872792697]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree101" unique_id=1220307254]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1184,7 +1184,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5, 2.5, 43.75)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree102" unique_id=739974374]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree102" unique_id=1236390710]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1195,7 +1195,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.75, 2.5, 44.25)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree103" unique_id=749468208]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree103" unique_id=1115807906]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1206,7 +1206,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 2.5, 44.5)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree104" unique_id=44448601]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree104" unique_id=463547564]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1217,7 +1217,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, 2.5, 44)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree105" unique_id=1739414269]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree105" unique_id=1563048779]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1228,7 +1228,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 2.5, 43)
 [node name="Sprite" type="Sprite3D" parent="Static/Trees/Tree106" unique_id=727045611]
 billboard = 1
 shaded = true
-texture = ExtResource("1_mik3e")
+texture = ExtResource("1_ad8be")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree106" unique_id=629830566]
 shape = SubResource("CylinderShape3D_jpi7s")
@@ -1253,7 +1253,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_a4g7j")
 
 [node name="MainCharacter" type="CharacterBody3D" parent="." unique_id=744679700]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92, 38)
-script = ExtResource("3_6ct3f")
+script = ExtResource("2_4w5fa")
 
 [node name="Camera3D" type="Camera3D" parent="MainCharacter" unique_id=653420556]
 transform = Transform3D(1, 0, 0, 0, 0.9050573, 0.42528966, 0, -0.42528966, 0.9050573, 0, 1, 2)

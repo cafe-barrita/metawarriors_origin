@@ -14,6 +14,10 @@ ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
 reflected_light_source = 2
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_yfqe4"]
+vertices = PackedVector3Array(-49.5, 0.5, 3, -6, 0.5, 3, -5.75, 0.5, 2, -4.25, 0.5, -49.5, -49.5, 0.5, -49.5, -4.25, 0.5, 2, -3, 0.5, 2, -2.75, 0.5, 3, 49.5, 0.5, 3, 49.5, 0.5, -49.5, -5.75, 0.5, 4.25, -49.5, 0.5, 49.5, -4.5, 0.5, 49.5, -4.5, 0.5, 4.25, -3.25, 0.5, 4.25, 49.5, 0.5, 49.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(3, 5, 2), PackedInt32Array(6, 5, 3), PackedInt32Array(6, 3, 7), PackedInt32Array(7, 3, 8), PackedInt32Array(8, 3, 9), PackedInt32Array(1, 10, 0), PackedInt32Array(0, 10, 11), PackedInt32Array(11, 10, 12), PackedInt32Array(10, 13, 12), PackedInt32Array(12, 13, 14), PackedInt32Array(14, 7, 12), PackedInt32Array(12, 7, 8), PackedInt32Array(12, 8, 15)]
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bidbc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qwd5g"]
@@ -25,6 +29,15 @@ albedo_color = Color(0, 0.568627, 0.345098, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_uy0hc"]
 material = SubResource("StandardMaterial3D_8b43r")
 size = Vector3(100, 1, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ypyof"]
+size = Vector3(2, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_57yxt"]
+size = Vector3(2, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7h2vx"]
+albedo_color = Color(0.654902, 0.40392157, 0.12156863, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_jpi7s"]
 height = 5.0
@@ -75,30 +88,38 @@ shader = ExtResource("6_7h2vx")
 material = SubResource("ShaderMaterial_obfps")
 size = Vector2(1.5, 1.5)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ypyof"]
-size = Vector3(2, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_57yxt"]
-size = Vector3(2, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7h2vx"]
-albedo_color = Color(0.654902, 0.40392157, 0.12156863, 1)
-
-[node name="GreenWoods" type="Node3D" unique_id=1720841516]
+[node name="PikeWoods" type="Node3D" unique_id=1720841516]
 script = ExtResource("1_te0d6")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=744595069]
 environment = SubResource("Environment_r4ki7")
 
-[node name="Floor" type="StaticBody3D" parent="." unique_id=851384088]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1387118712]
+navigation_mesh = SubResource("NavigationMesh_yfqe4")
+
+[node name="Floor" type="StaticBody3D" parent="NavigationRegion3D" unique_id=851384088]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 physics_material_override = SubResource("PhysicsMaterial_bidbc")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=157555845]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor" unique_id=157555845]
 shape = SubResource("BoxShape3D_qwd5g")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1038356540]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor" unique_id=1038356540]
 mesh = SubResource("BoxMesh_uy0hc")
+
+[node name="Box" type="RigidBody3D" parent="NavigationRegion3D" unique_id=540340918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.5, 3)
+mass = 12.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -0.2, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Box" unique_id=2037033161]
+shape = SubResource("BoxShape3D_ypyof")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Box" unique_id=1909776419]
+mesh = SubResource("BoxMesh_57yxt")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_7h2vx")
 
 [node name="Static" type="Node3D" parent="." unique_id=1216494632]
 
@@ -1270,8 +1291,6 @@ texture = ExtResource("1_eyimb")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree106" unique_id=629830566]
 shape = SubResource("CylinderShape3D_jpi7s")
 
-[node name="Obstacles" type="Node3D" parent="." unique_id=1366511839]
-
 [node name="MainCharacter" type="Node3D" parent="." unique_id=649947704]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92, 0)
 
@@ -1319,6 +1338,10 @@ layers = 4
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_te0d6")
 
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="MainCharacter/Lucio" unique_id=444155407]
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="MainCharacter/Lucio" unique_id=2101033572]
+
 [node name="Enemies" type="Node3D" parent="." unique_id=1990000001]
 
 [node name="Dragonfly A" type="CharacterBody3D" parent="Enemies" unique_id=1990000002]
@@ -1336,6 +1359,10 @@ layers = 4
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_7swc8")
 
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Enemies/Dragonfly A" unique_id=828057355]
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Enemies/Dragonfly A" unique_id=1800481635]
+
 [node name="Dragonfly B" type="CharacterBody3D" parent="Enemies" unique_id=1990000005]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, -1.5)
 
@@ -1350,6 +1377,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 layers = 4
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_7swc8")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Enemies/Dragonfly B" unique_id=1305670013]
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Enemies/Dragonfly B" unique_id=1670209723]
 
 [node name="Dragonfly C" type="CharacterBody3D" parent="Enemies" unique_id=1990000008]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.8, -1)
@@ -1366,18 +1397,6 @@ layers = 4
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_7swc8")
 
-[node name="Interactive" type="Node3D" parent="." unique_id=852041282]
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Enemies/Dragonfly C" unique_id=70031087]
 
-[node name="Box" type="RigidBody3D" parent="Interactive" unique_id=540340918]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.5, 3)
-mass = 12.0
-center_of_mass_mode = 1
-center_of_mass = Vector3(0, -0.2, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactive/Box" unique_id=2037033161]
-shape = SubResource("BoxShape3D_ypyof")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactive/Box" unique_id=1909776419]
-mesh = SubResource("BoxMesh_57yxt")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_7h2vx")
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Enemies/Dragonfly C" unique_id=1270563684]

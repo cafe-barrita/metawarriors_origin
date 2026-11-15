@@ -7,7 +7,7 @@ extends Node2D
 @onready var scroll: ScrollContainer = $ScrollContainer
 
 # Llama a esta función desde cualquier otro script para añadir un mensaje
-func agregar_mensaje(texto: String, color: Color = Color.BLACK) -> void:
+func _on_message_log(texto: String, color: Color = Color.BLACK) -> void:
 	# 1. Creamos una nueva etiqueta para el mensaje
 	var nuevo_label = RichTextLabel.new()
 	nuevo_label.bbcode_enabled = true
@@ -28,8 +28,6 @@ func agregar_mensaje(texto: String, color: Color = Color.BLACK) -> void:
 	await get_tree().process_frame
 	scroll.scroll_vertical = int(scroll.get_v_scroll_bar().max_value)
 
-func atb_message(character):
-	agregar_mensaje("Turno del personaje " + character)
 
 func _ready() -> void:
-	EventBus.atb_filled.connect(atb_message)
+	EventBus.message_log.connect(_on_message_log)

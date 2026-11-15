@@ -80,7 +80,25 @@ Enemy mobs will be pseudo-randomly generated on scene load and will roam freely.
 
 Party stats will affect exploration. The total amount of power of the party will affect the strength applied when pushing objects (some will require a minimum to even move) and will increase the posibility of mobs becoming scared of you. Mind will increase the posibility of sneaking on enemies and will reduce the time to display hints.
 
+There will be a menu that will map actions to keyboard or controller buttons to trigger actions such as freezin running water, shooting heat or jumping.
+
 ### Combat
+
+When there is a collision with an enemy mob or a special event, a battle will start. If the enemy is collided from behind it will be a surprise attack. If the player is collided from behing it will be an ambush.
+
+At the start of the battle, a rectangular area will be stablished and divided into two: the player battle area and the enemy battle area (this one may overlap with player battle area to allow enemies to surround you). Then, obstacles within the area will be located and recorded to determine field of vision and characters will position themselves according to preestablished strategy.
+
+Once participants are ready, ATBs will initialize between 40 and 60% (70% with maxxed out luck) filled. If victims of an ambush or surprise attack, that number will be 10% less. If the perpetrators of the ambush, it will be a 10% more.
+
+TODO explain the multiple and configurable battle speeds and their interaction with the ATB
+
+TODO explain turn and action queues
+
+TODO explain ranged and melee attacks + cooldown
+
+TODO explain movement actions and emnity
+
+TODO explain skills and charge/casting time
 
 ### Interaction with NPCs
 
