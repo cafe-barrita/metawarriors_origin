@@ -1309,6 +1309,7 @@ MinimapSubviewport = NodePath("../../../MinimapViewport")
 [node name="Menu" type="Sprite3D" parent="MainCharacter/MainCamera" unique_id=626219384]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 layers = 2
+texture_filter = 1
 texture = SubResource("ViewportTexture_yfqe4")
 
 [node name="MinimapViewport" type="SubViewport" parent="MainCharacter" unique_id=1582828984]

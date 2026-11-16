@@ -4,6 +4,10 @@ enum GamepadType { XBOX, PLAYSTATION, SWITCH, KEYBOARD }
 
 var characters: Dictionary
 var obstacles
+var battle_area: Rect2
+var battle_speed: float
+var idle_battle_speed: float = 0.07
+var action_battle_speed: float = 0.03
 var gamepad: GamepadType
 
 func set_current_gamepad_type(_device=0, _connected=false) -> void:
@@ -26,7 +30,7 @@ func set_current_gamepad_type(_device=0, _connected=false) -> void:
 
 func set_battle_data() -> void:
 	# TODO
-	pass
+	battle_speed = idle_battle_speed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

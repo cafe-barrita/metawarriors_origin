@@ -204,6 +204,59 @@ theme_override_font_sizes/font_size = 10
 theme_override_styles/fill = SubResource("StyleBoxFlat_eyimb")
 value = 100.0
 
+[node name="bianca" type="Node2D" parent="Control/PanelContainer/HBoxContainer/pc_data" unique_id=189080032]
+position = Vector2(0, 40)
+
+[node name="TextureRect" type="ColorRect" parent="Control/PanelContainer/HBoxContainer/pc_data/bianca" unique_id=1546222629]
+visible = false
+modulate = Color(1, 1, 1, 0.54509807)
+custom_minimum_size = Vector2(120, 10)
+custom_maximum_size = Vector2(-1, 42)
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 116.0
+offset_bottom = 36.0
+script = ExtResource("3_mj5lg")
+
+[node name="Panel" type="Panel" parent="Control/PanelContainer/HBoxContainer/pc_data/bianca" unique_id=683903293]
+custom_minimum_size = Vector2(28, 28)
+offset_right = 28.0
+offset_bottom = 28.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yqeox")
+
+[node name="ATB" type="Control" parent="Control/PanelContainer/HBoxContainer/pc_data/bianca" unique_id=180246234]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 30.0
+offset_bottom = 30.0
+script = ExtResource("1_vjb58")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/HBoxContainer/pc_data/bianca" unique_id=1996248480]
+custom_minimum_size = Vector2(44, 0)
+offset_left = 40.0
+offset_right = 104.0
+offset_bottom = 42.4
+
+[node name="Health" type="ProgressBar" parent="Control/PanelContainer/HBoxContainer/pc_data/bianca/VBoxContainer" unique_id=149111062]
+custom_minimum_size = Vector2(8, 8)
+custom_maximum_size = Vector2(44, 14.4)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+theme_override_styles/fill = SubResource("StyleBoxFlat_qwqvq")
+value = 100.0
+
+[node name="Energy" type="ProgressBar" parent="Control/PanelContainer/HBoxContainer/pc_data/bianca/VBoxContainer" unique_id=1429040017]
+custom_minimum_size = Vector2(16, 0)
+custom_maximum_size = Vector2(44, 14.4)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 10
+theme_override_styles/fill = SubResource("StyleBoxFlat_eyimb")
+value = 100.0
+
 [node name="Minimap" type="Node2D" parent="Control/PanelContainer/HBoxContainer" unique_id=1055486880]
 position = Vector2(940, 520)
 

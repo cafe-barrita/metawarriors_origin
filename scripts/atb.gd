@@ -4,8 +4,6 @@ extends Control
 @export var background_color: Color = Color(0.2, 0.2, 0.2, 0.6)
 @export var fill_color: Color = Color(1.0, 0.8, 0.0, 1.0) # Color dorado ATB
 @export var ring_width: float = 4.0
-var no_action_speed = 0.07
-var action_speed = 0.03
 var character_speed = 2
 
 func _ready() -> void:
@@ -32,7 +30,7 @@ func _draw() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if progress < 1.0:
-		progress += delta * no_action_speed * character_speed
+		progress += delta * GameData.battle_speed * character_speed
 		if progress >= 1.0:
 			progress = 1.0
 			EventBus.atb_filled.emit(get_parent().name)

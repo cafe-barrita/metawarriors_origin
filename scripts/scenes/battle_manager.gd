@@ -27,6 +27,7 @@ func _on_atb_filled(character_name: String) -> void:
 			if current_player_character == "":
 				current_player_character = character_name
 				EventBus.player_character_turn_start.emit(current_player_character)
+				GameData.battle_speed = GameData.action_battle_speed
 		"enemy":
 			enemy_turn_queue.append(character_name)
 			if current_player_character == "":
@@ -39,6 +40,8 @@ func _on_player_character_turn_end(character_name: String) -> void:
 	party_turn_queue.pop_front()
 	if party_turn_queue.is_empty():
 		current_player_character = ""
+		if action_queue.is_empty():
+			GameData.battle_speed = GameData.idle_battle_speed
 	else:
 		current_player_character = party_turn_queue.front()
 		EventBus.player_character_turn_start.emit(current_player_character)
