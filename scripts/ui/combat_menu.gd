@@ -9,10 +9,7 @@ func _ready() -> void:
 
 func _on_move_pressed() -> void:
 	EventBus.display_selector.emit(
-		current_character,
-		"movement",
-		GameData.characters[current_character]["radius"],
-		GameData.characters[current_character]["node"].global_position
+		Movement.create(GameData.characters[current_character]["node"])
 	)
 	visible = false
 

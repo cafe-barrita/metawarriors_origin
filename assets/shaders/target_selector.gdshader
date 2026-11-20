@@ -1,5 +1,7 @@
 shader_type spatial;
 
+uniform bool use_gradient = false;
+
 void vertex() {
 	// Called for every vertex the material is visible on.
 }
@@ -8,7 +10,13 @@ void fragment() {
 	float dist = length(UV - vec2(0.5));
 	float radius = 0.5;
 	if (dist < radius) {
-		ALBEDO = vec3(1.0,1.0,1.0);
+		if (use_gradient) {
+			// TODO gradiant thingy
+			ALBEDO = vec3(1.0,1.0,1.0);
+		}
+		else {
+			ALBEDO = vec3(1.0,1.0,1.0);
+		}
 	}
 	else {
 		discard;

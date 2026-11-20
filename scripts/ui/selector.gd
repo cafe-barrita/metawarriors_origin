@@ -1,32 +1,36 @@
 extends Node3D
 
 const SPEED = 5.0
-var current_character: String
+var current_action: Action = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	EventBus.display_selector.connect(_on_display_selector)
 
 
-func _on_display_selector(character, type, radius, target):
-	current_character = character
+func _on_display_selector(action):
+	current_action = action
 	visible = true
-	global_position = target
-	if type == "single":
+	global_position = action.initial_target()
+	if action.selector_type == "single":
 		$Area.visible = false
 		$Single.visible = true
 	else:
 		$Area.visible = true
 		$Single.visible = false
+		var radius = action.selector_radius
 		$Area.mesh.size = Vector2(radius*2, radius*2)
-		# TODO change shader depending on area or movement types
+		# TODO check if more parameters are needed
+		$Area.mesh.material.set_shader_parameter("use_gradient", action.selector_gradient)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if visible:
 		if Input.is_action_just_released('action_item'):
 			visible = false
-			EventBus.player_character_turn_start.emit(current_character)
+			EventBus.player_character_turn_start.emit(current_action.source.char_name())
+			current_action.queue_free()
+			current_action = null
 			return
 		var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -39,9 +43,9 @@ func _process(delta: float) -> void:
 				# TODO check if navigation and change color
 				# TODO use navigation to calculate real distance
 				var distance = global_position.distance_to(
-					GameData.characters[current_character]["node"].global_position
+					current_action.source.global_position
 				)
-				EventBus.atb_estimation.emit(current_character, distance * 0.05)
+				EventBus.atb_estimation.emit(current_action.source.char_name(), distance * 0.05)
 		else:
 			# TODO single target should only move between valid targets
 			pass

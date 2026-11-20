@@ -4,9 +4,10 @@
 [ext_resource type="Script" uid="uid://iwwqousc2411" path="res://scripts/scenes/scene_manager.gd" id="1_te0d6"]
 [ext_resource type="PackedScene" uid="uid://dxcwqbjmh53n4" path="res://scenes/menu.tscn" id="2_eyimb"]
 [ext_resource type="Texture2D" uid="uid://ceu1310yksy7y" path="res://assets/images/playable_characters/lucio.png" id="3_57yxt"]
+[ext_resource type="Script" uid="uid://js8rlb8x8r62" path="res://scripts/character/character.gd" id="3_r3uro"]
 [ext_resource type="Shader" uid="uid://vu3w1ybwo2fl" path="res://assets/shaders/party_minimap_marker.gdshader" id="4_57yxt"]
 [ext_resource type="Texture2D" uid="uid://3xp5up83gyms" path="res://assets/images/enemies/dracolibelula.png" id="4_draco"]
-[ext_resource type="Shader" uid="uid://d4mon22ld7vma" path="res://assets/shaders/movement_marker.gdshader" id="5_bpbh4"]
+[ext_resource type="Shader" uid="uid://d4mon22ld7vma" path="res://assets/shaders/target_selector.gdshader" id="5_bpbh4"]
 [ext_resource type="Shader" uid="uid://r5p6q1uu0crs" path="res://assets/shaders/enemy_minimap_marker.gdshader" id="6_7h2vx"]
 [ext_resource type="Script" uid="uid://v2sx8uehyf0n" path="res://scripts/ui/selector.gd" id="6_bpbh4"]
 
@@ -102,6 +103,7 @@ height = 1.66
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7swc8"]
 render_priority = 0
 shader = ExtResource("5_bpbh4")
+shader_parameter/use_gradient = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_yfqe4"]
 material = SubResource("ShaderMaterial_7swc8")
@@ -1323,6 +1325,7 @@ shape = SubResource("CylinderShape3D_jpi7s")
 
 [node name="Dragonfly A" type="CharacterBody3D" parent="Enemies" unique_id=1990000002]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.8, -1)
+script = ExtResource("3_r3uro")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemies/Dragonfly A" unique_id=1990000003]
 shape = SubResource("CylinderShape3D_draco")
@@ -1342,6 +1345,7 @@ mesh = SubResource("PlaneMesh_7swc8")
 
 [node name="Dragonfly B" type="CharacterBody3D" parent="Enemies" unique_id=1990000005]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, -1.5)
+script = ExtResource("3_r3uro")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemies/Dragonfly B" unique_id=1990000006]
 shape = SubResource("CylinderShape3D_draco")
@@ -1361,6 +1365,7 @@ mesh = SubResource("PlaneMesh_7swc8")
 
 [node name="Dragonfly C" type="CharacterBody3D" parent="Enemies" unique_id=1990000008]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.8, -1)
+script = ExtResource("3_r3uro")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemies/Dragonfly C" unique_id=1990000009]
 shape = SubResource("CylinderShape3D_draco")
@@ -1413,6 +1418,7 @@ size = 16.0
 
 [node name="Lucio" type="CharacterBody3D" parent="MainCharacter/Party" unique_id=405144263]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92, 2)
+script = ExtResource("3_r3uro")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MainCharacter/Party/Lucio" unique_id=958924291]
 shape = SubResource("CylinderShape3D_a4g7j")
@@ -1433,6 +1439,7 @@ mesh = SubResource("PlaneMesh_te0d6")
 
 [node name="Bianca" type="CharacterBody3D" parent="MainCharacter/Party" unique_id=124413884]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.83, 4)
+script = ExtResource("3_r3uro")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MainCharacter/Party/Bianca" unique_id=1256701325]
 shape = SubResource("CylinderShape3D_a4g7j")

@@ -28,7 +28,6 @@ func set_progress(value: float) -> void:
 
 func set_remaining(value: float) -> void:
 	remaining = clamp(value, -1.0, 1.0)
-	queue_redraw() # Fuerza a que el nodo se redibuje al cambiar el valor
 
 func _draw() -> void:
 	var center = size / 2.0
@@ -54,11 +53,11 @@ func _draw() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	_time += delta * 1.2
 	if progress < 1.0:
 		progress += delta * GameData.battle_speed * character_speed
 		if progress >= 1.0:
 			progress = 1.0
 			EventBus.atb_filled.emit(get_parent().name)
 	elif remaining > -1.0:
+		_time += delta * 1.2
 		queue_redraw()

@@ -18,7 +18,7 @@ signal action_start(action) # TODO determine type of action
 signal action_end(action)
 
 # Action specific signals
-signal display_selector(character: String, type: String, radius: float, target: Vector3)
+signal display_selector(action: Action)
 
 # ATB signals
 signal atb_filled(character)

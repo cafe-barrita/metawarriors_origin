@@ -33,14 +33,13 @@ func set_battle_data(party: Node3D, enemies: Node3D) -> void:
 	battle_speed = idle_battle_speed
 	battle_area = Rect2(Vector2(-8, -5), Vector2(15, 10))
 	for member in party.get_children():
-		var char_name = member.name.to_lower()
+		var char_name = member.char_name()
 		characters[char_name] = {
 			'type': 'party',
-			'radius': 0.8,
 			'node': member
 		}
 	for enemy in enemies.get_children():
-		var char_name = enemy.name.to_lower().replace(' ', '_')
+		var char_name = enemy.char_name()
 		characters[char_name] = {
 			'type': 'enemy',
 			'node': enemy
