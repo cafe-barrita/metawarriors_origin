@@ -8,7 +8,7 @@ func _ready() -> void:
 	battle_manager = BattleManager.new()
 	add_child(battle_manager)
 	# TODO add parameters
-	GameData.set_battle_data()
+	GameData.set_battle_data($MainCharacter/Party, $Enemies)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

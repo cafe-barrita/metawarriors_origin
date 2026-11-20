@@ -8,7 +8,7 @@ void fragment() {
 		float dist = length(UV - vec2(0.5));
 	float radius = 0.5;
 	if (dist < radius) {
-		ALBEDO = vec3(1.0,0.0,0.0);
+		ALBEDO = vec3(0.8,0.0,0.0);
 	}
 	else {
 		discard;

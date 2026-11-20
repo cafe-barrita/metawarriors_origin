@@ -2,7 +2,7 @@ extends Node
 
 enum GamepadType { XBOX, PLAYSTATION, SWITCH, KEYBOARD }
 
-var characters: Dictionary
+var characters: Dictionary = {}
 var obstacles
 var battle_area: Rect2
 var battle_speed: float
@@ -28,31 +28,28 @@ func set_current_gamepad_type(_device=0, _connected=false) -> void:
 		# Por defecto, los mandos genéricos o de Xbox se tratan como Xbox
 		gamepad = GamepadType.XBOX
 
-func set_battle_data() -> void:
+func set_battle_data(party: Node3D, enemies: Node3D) -> void:
 	# TODO
 	battle_speed = idle_battle_speed
+	battle_area = Rect2(Vector2(-8, -5), Vector2(15, 10))
+	for member in party.get_children():
+		var char_name = member.name.to_lower()
+		characters[char_name] = {
+			'type': 'party',
+			'radius': 0.8,
+			'node': member
+		}
+	for enemy in enemies.get_children():
+		var char_name = enemy.name.to_lower().replace(' ', '_')
+		characters[char_name] = {
+			'type': 'enemy',
+			'node': enemy
+		}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# TODO change this, still don't know how
-	characters = {
-		'lucio': {
-			'type': 'party'
-		},
-		'bianca': {
-			'type': 'party'
-		},
-		'dragonfly_a': {
-			'type': 'enemy'
-		},
-		'dragonfly_b': {
-			'type': 'enemy'
-		},
-		'dragonfly_c': {
-			'type': 'enemy'
-		}
-	}
-
+	
 	set_current_gamepad_type()
 	Input.joy_connection_changed.connect(set_current_gamepad_type)
 

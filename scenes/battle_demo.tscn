@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://ceu1310yksy7y" path="res://assets/images/playable_characters/lucio.png" id="3_57yxt"]
 [ext_resource type="Shader" uid="uid://vu3w1ybwo2fl" path="res://assets/shaders/party_minimap_marker.gdshader" id="4_57yxt"]
 [ext_resource type="Texture2D" uid="uid://3xp5up83gyms" path="res://assets/images/enemies/dracolibelula.png" id="4_draco"]
+[ext_resource type="Shader" uid="uid://d4mon22ld7vma" path="res://assets/shaders/movement_marker.gdshader" id="5_bpbh4"]
 [ext_resource type="Shader" uid="uid://r5p6q1uu0crs" path="res://assets/shaders/enemy_minimap_marker.gdshader" id="6_7h2vx"]
+[ext_resource type="Script" uid="uid://v2sx8uehyf0n" path="res://scripts/ui/selector.gd" id="6_bpbh4"]
 
 [sub_resource type="Environment" id="Environment_r4ki7"]
 background_energy_multiplier = 3.0
@@ -43,30 +45,6 @@ albedo_color = Color(0.654902, 0.40392157, 0.12156863, 1)
 height = 5.0
 radius = 2.0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_yfqe4"]
-viewport_path = NodePath("MainCharacter/MainCamera/SubViewport")
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_a4g7j"]
-height = 1.84
-radius = 0.9
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ct3f"]
-transparency = 1
-albedo_texture = ExtResource("3_57yxt")
-
-[sub_resource type="QuadMesh" id="QuadMesh_uf2eg"]
-resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_6ct3f")
-size = Vector2(1.76, 1.84)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bpbh4"]
-render_priority = 0
-shader = ExtResource("4_57yxt")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_te0d6"]
-material = SubResource("ShaderMaterial_bpbh4")
-size = Vector2(1, 1)
-
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_draco"]
 radius = 0.9
 
@@ -87,6 +65,56 @@ shader = ExtResource("6_7h2vx")
 [sub_resource type="PlaneMesh" id="PlaneMesh_7swc8"]
 material = SubResource("ShaderMaterial_obfps")
 size = Vector2(1.5, 1.5)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_yfqe4"]
+viewport_path = NodePath("MainCharacter/MainCamera/SubViewport")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_a4g7j"]
+height = 1.66
+radius = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ct3f"]
+transparency = 1
+albedo_texture = ExtResource("3_57yxt")
+
+[sub_resource type="QuadMesh" id="QuadMesh_uf2eg"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_6ct3f")
+size = Vector2(1.76, 1.84)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bpbh4"]
+render_priority = 0
+shader = ExtResource("4_57yxt")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_te0d6"]
+material = SubResource("ShaderMaterial_bpbh4")
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ufwb2"]
+albedo_color = Color(0.091588445, 0.24777436, 0.12570176, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mj5lg"]
+material = SubResource("StandardMaterial3D_ufwb2")
+top_radius = 0.8
+bottom_radius = 0.8
+height = 1.66
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7swc8"]
+render_priority = 0
+shader = ExtResource("5_bpbh4")
+
+[sub_resource type="QuadMesh" id="QuadMesh_yfqe4"]
+material = SubResource("ShaderMaterial_7swc8")
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bpbh4"]
+albedo_color = Color(1, 0.1254902, 0.13333334, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yfqe4"]
+material = SubResource("StandardMaterial3D_bpbh4")
+top_radius = 0.4
+bottom_radius = 0.0
+height = 0.6
 
 [node name="PikeWoods" type="Node3D" unique_id=1720841516]
 script = ExtResource("1_te0d6")
@@ -1291,58 +1319,6 @@ texture = ExtResource("1_eyimb")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Trees/Tree106" unique_id=629830566]
 shape = SubResource("CylinderShape3D_jpi7s")
 
-[node name="MainCharacter" type="Node3D" parent="." unique_id=649947704]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92, 0)
-
-[node name="MainCamera" type="Camera3D" parent="MainCharacter" unique_id=653420556]
-transform = Transform3D(1, 0, 0, 0, 0.9050573, 0.42528966, 0, -0.42528966, 0.9050573, 0, 3, 9)
-cull_mask = 1048571
-current = true
-
-[node name="SubViewport" type="SubViewport" parent="MainCharacter/MainCamera" unique_id=382015457]
-transparent_bg = true
-size = Vector2i(1600, 900)
-
-[node name="Menu" parent="MainCharacter/MainCamera/SubViewport" unique_id=1128259270 node_paths=PackedStringArray("MinimapSubviewport") instance=ExtResource("2_eyimb")]
-MinimapSubviewport = NodePath("../../../MinimapViewport")
-
-[node name="Menu" type="Sprite3D" parent="MainCharacter/MainCamera" unique_id=626219384]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
-layers = 2
-texture_filter = 1
-texture = SubResource("ViewportTexture_yfqe4")
-
-[node name="MinimapViewport" type="SubViewport" parent="MainCharacter" unique_id=1582828984]
-handle_input_locally = false
-size = Vector2i(100, 80)
-render_target_update_mode = 4
-
-[node name="MinimapCamera" type="Camera3D" parent="MainCharacter/MinimapViewport" unique_id=518955062]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10, 0)
-cull_mask = 1048573
-projection = 1
-size = 16.0
-
-[node name="Lucio" type="CharacterBody3D" parent="MainCharacter" unique_id=405144263]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MainCharacter/Lucio" unique_id=958924291]
-shape = SubResource("CylinderShape3D_a4g7j")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MainCharacter/Lucio" unique_id=745439703]
-mesh = SubResource("QuadMesh_uf2eg")
-skeleton = NodePath("../..")
-
-[node name="Marker" type="MeshInstance3D" parent="MainCharacter/Lucio" unique_id=226702232]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-layers = 4
-cast_shadow = 0
-mesh = SubResource("PlaneMesh_te0d6")
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="MainCharacter/Lucio" unique_id=444155407]
-
-[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="MainCharacter/Lucio" unique_id=2101033572]
-
 [node name="Enemies" type="Node3D" parent="." unique_id=1990000001]
 
 [node name="Dragonfly A" type="CharacterBody3D" parent="Enemies" unique_id=1990000002]
@@ -1401,3 +1377,90 @@ mesh = SubResource("PlaneMesh_7swc8")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Enemies/Dragonfly C" unique_id=70031087]
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Enemies/Dragonfly C" unique_id=1270563684]
+
+[node name="MainCharacter" type="Node3D" parent="." unique_id=649947704]
+
+[node name="MainCamera" type="Camera3D" parent="MainCharacter" unique_id=653420556]
+transform = Transform3D(1, 0, 0, 0, 0.9050573, 0.42528966, 0, -0.42528966, 0.9050573, 0, 3, 9)
+cull_mask = 1048571
+current = true
+
+[node name="SubViewport" type="SubViewport" parent="MainCharacter/MainCamera" unique_id=382015457]
+transparent_bg = true
+size = Vector2i(1600, 900)
+
+[node name="Menu" parent="MainCharacter/MainCamera/SubViewport" unique_id=1128259270 node_paths=PackedStringArray("MinimapSubviewport") instance=ExtResource("2_eyimb")]
+MinimapSubviewport = NodePath("../../../MinimapViewport")
+
+[node name="Menu" type="Sprite3D" parent="MainCharacter/MainCamera" unique_id=626219384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+layers = 2
+texture_filter = 1
+texture = SubResource("ViewportTexture_yfqe4")
+
+[node name="MinimapViewport" type="SubViewport" parent="MainCharacter" unique_id=1582828984]
+handle_input_locally = false
+size = Vector2i(100, 80)
+render_target_update_mode = 4
+
+[node name="MinimapCamera" type="Camera3D" parent="MainCharacter/MinimapViewport" unique_id=518955062]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10, 0)
+cull_mask = 1048573
+projection = 1
+size = 16.0
+
+[node name="Party" type="Node3D" parent="MainCharacter" unique_id=755288380]
+
+[node name="Lucio" type="CharacterBody3D" parent="MainCharacter/Party" unique_id=405144263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MainCharacter/Party/Lucio" unique_id=958924291]
+shape = SubResource("CylinderShape3D_a4g7j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MainCharacter/Party/Lucio" unique_id=745439703]
+mesh = SubResource("QuadMesh_uf2eg")
+skeleton = NodePath("../../..")
+
+[node name="Marker" type="MeshInstance3D" parent="MainCharacter/Party/Lucio" unique_id=226702232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+layers = 4
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_te0d6")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="MainCharacter/Party/Lucio" unique_id=444155407]
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="MainCharacter/Party/Lucio" unique_id=2101033572]
+
+[node name="Bianca" type="CharacterBody3D" parent="MainCharacter/Party" unique_id=124413884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.83, 4)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MainCharacter/Party/Bianca" unique_id=1256701325]
+shape = SubResource("CylinderShape3D_a4g7j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MainCharacter/Party/Bianca" unique_id=1271261101]
+mesh = SubResource("CylinderMesh_mj5lg")
+
+[node name="Marker" type="MeshInstance3D" parent="MainCharacter/Party/Bianca" unique_id=267908436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+layers = 4
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_te0d6")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="MainCharacter/Party/Bianca" unique_id=655039807]
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="MainCharacter/Party/Bianca" unique_id=1916907886]
+
+[node name="Selector" type="Node3D" parent="MainCharacter" unique_id=99733048]
+visible = false
+script = ExtResource("6_bpbh4")
+
+[node name="Area" type="MeshInstance3D" parent="MainCharacter/Selector" unique_id=11940822]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+visible = false
+cast_shadow = 0
+mesh = SubResource("QuadMesh_yfqe4")
+
+[node name="Single" type="MeshInstance3D" parent="MainCharacter/Selector" unique_id=587251233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+visible = false
+mesh = SubResource("CylinderMesh_yfqe4")
