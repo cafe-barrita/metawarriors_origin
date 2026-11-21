@@ -1342,6 +1342,8 @@ mesh = SubResource("PlaneMesh_7swc8")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Enemies/Dragonfly A" unique_id=828057355]
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Enemies/Dragonfly A" unique_id=1800481635]
+radius = 0.9
+height = 2.0
 
 [node name="Dragonfly B" type="CharacterBody3D" parent="Enemies" unique_id=1990000005]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, -1.5)
@@ -1362,6 +1364,8 @@ mesh = SubResource("PlaneMesh_7swc8")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Enemies/Dragonfly B" unique_id=1305670013]
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Enemies/Dragonfly B" unique_id=1670209723]
+radius = 0.9
+height = 2.0
 
 [node name="Dragonfly C" type="CharacterBody3D" parent="Enemies" unique_id=1990000008]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.8, -1)
@@ -1382,6 +1386,8 @@ mesh = SubResource("PlaneMesh_7swc8")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Enemies/Dragonfly C" unique_id=70031087]
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Enemies/Dragonfly C" unique_id=1270563684]
+radius = 0.9
+height = 2.0
 
 [node name="MainCharacter" type="Node3D" parent="." unique_id=649947704]
 
@@ -1434,8 +1440,14 @@ cast_shadow = 0
 mesh = SubResource("PlaneMesh_te0d6")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="MainCharacter/Party/Lucio" unique_id=444155407]
+avoidance_enabled = true
+height = 1.84
+radius = 0.92
+neighbor_distance = 20.0
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="MainCharacter/Party/Lucio" unique_id=2101033572]
+radius = 0.9
+height = 1.84
 
 [node name="Bianca" type="CharacterBody3D" parent="MainCharacter/Party" unique_id=124413884]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.83, 4)
@@ -1454,8 +1466,14 @@ cast_shadow = 0
 mesh = SubResource("PlaneMesh_te0d6")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="MainCharacter/Party/Bianca" unique_id=655039807]
+avoidance_enabled = true
+height = 1.66
+radius = 0.83
+neighbor_distance = 20.0
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="MainCharacter/Party/Bianca" unique_id=1916907886]
+radius = 0.83
+height = 1.66
 
 [node name="Selector" type="Node3D" parent="MainCharacter" unique_id=99733048]
 visible = false

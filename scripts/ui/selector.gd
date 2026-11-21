@@ -38,14 +38,12 @@ func _process(delta: float) -> void:
 			return
 		if $Area.visible:
 			var target = global_position + direction*SPEED*delta
-			if GameData.battle_area.has_point(Vector2(target.x, target.z)):
+			if GameData.battle_area.has_point(Vector2(target.x, target.z)) and current_action.source.can_walk_towards(target):
 				global_position = target
-				# TODO check if navigation and change color
-				# TODO use navigation to calculate real distance
-				var distance = global_position.distance_to(
-					current_action.source.global_position
+				EventBus.atb_estimation.emit(
+					current_action.source.char_name(),
+					current_action.atb_consumed(target)
 				)
-				EventBus.atb_estimation.emit(current_action.source.char_name(), distance * 0.05)
 		else:
 			# TODO single target should only move between valid targets
 			pass

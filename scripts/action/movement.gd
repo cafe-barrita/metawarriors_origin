@@ -1,7 +1,6 @@
 class_name Movement
 extends Action
 
-
 static func create(source_char: Character) -> Movement:
 	var movement = Movement.new()
 	movement.source = source_char
@@ -9,6 +8,9 @@ static func create(source_char: Character) -> Movement:
 	movement.selector_radius = 0.8 # TODO get char radius
 	movement.selector_gradient = false
 	return movement
+
+func atb_consumed(target: Vector3) -> float:
+	return 0.05 * source.estimated_distance(target)
 
 func initial_target() -> Vector3:
 	return source.global_position

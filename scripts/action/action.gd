@@ -7,6 +7,9 @@ var selector_type: String # Area or single
 var selector_radius: float
 var selector_gradient: bool
 
+func atb_consumed(target) -> float:
+	return 0.0
+
 func initial_target() -> Vector3:
 	return Vector3.ZERO
 
